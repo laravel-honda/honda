@@ -18,7 +18,7 @@ return [
         'forgot_password' => 'Forgot your password?',
 
         'button' => 'Log in',
-        'register' => "Don't have an account yet ?",
+        'register' => "Don't have an account yet?",
         'register_link' => 'Register'
     ],
 
@@ -33,7 +33,7 @@ return [
         ],
 
         'button' => 'Register',
-        'login' => "Already have an account ?",
+        'login' => "Already have an account?",
         'login_link' => 'Log in'
     ],
 

@@ -1,3 +1,3 @@
 <x-layout title="Hello world">
-    @dump(\Honda\Navigation\Navigation::dashboard())
+    <x-navigation-sidebar :items="\Honda\Navigation\Navigation::dashboard()"/>
 </x-layout>

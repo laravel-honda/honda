@@ -11,13 +11,10 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        Navigation::macro('dashboard', function () {
-            return Navigation::create()
-                ->add('welcome', fn(Item $item) => $item->icon('x'));
+        Navigation::register('dashboard', function (Navigation $navigation) {
+            return $navigation
+                ->add('hello', fn(Item $item) => $item->icon('circle-check'));
         });
     }
 
-    public function boot(): void
-    {
-    }
 }
