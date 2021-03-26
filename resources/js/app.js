@@ -1,15 +1,15 @@
 require('alpinejs')
 
-const livewireShouldObserve = (el) => !el.tagName.includes("-") || el.hasAttribute('wire:observe') 
+const livewireShouldObserve = (el) => !el.tagName.includes("-") || el.hasAttribute('wire:observe')
 
 /**
 * Prevents Livewire from tracking web components unless wire:observe is provided
 */
-window.livewire.hook('element.initialized', ()el => {
+window.livewire.hook('element.initialized', (el) => {
    if (!livewireShouldObserve(el)) {
        return;
    }
-  
+
    el.__livewire_ignore = true;
 })
 
