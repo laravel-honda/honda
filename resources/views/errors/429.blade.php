@@ -1,5 +1,5 @@
-@extends('errors::illustrated-layout')
+@extends('errors.layout')
 
-@section('title', __('Too Many Requests'))
+@section('title', __('errors.429'))
 @section('code', '429')
-@section('message', __('Too Many Requests'))
+@section('message', __('errors.429'))

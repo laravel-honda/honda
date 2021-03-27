@@ -2,7 +2,6 @@
 
 namespace App;
 
-use App\Console\Commands\TranslationMakeCommand;
 use Illuminate\Console\Scheduling\Schedule;
 use Illuminate\Foundation\Console\Kernel;
 

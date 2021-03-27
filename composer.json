@@ -1,5 +1,6 @@
 {
     "name": "starts/starts",
+    "description": "",
     "license": "MIT",
     "type": "project",
     "require": {
@@ -16,8 +17,15 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
         "ryangjchandler/blade-tabler-icons": "^0.5.0",
-        "spatie/valuestore": "^1.2"
+        "spatie/browsershot": "^3.44",
+        "spatie/valuestore": "^1.2",
+        "starts/banners": "dev-master"
     },
+    "repositories": [{
+        "type": "path",
+        "url": "../../Starts/laravel-banners"
+    }
+    ],
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
         "beyondcode/laravel-query-detector": "^1.4",

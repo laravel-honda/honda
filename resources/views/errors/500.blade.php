@@ -1,5 +1,5 @@
-@extends('errors::illustrated-layout')
+@extends('errors.layout')
 
-@section('title', __('Server Error'))
+@section('title', __('errors.500'))
 @section('code', '500')
-@section('message', __('Server Error'))
+@section('message', __('errors.500'))

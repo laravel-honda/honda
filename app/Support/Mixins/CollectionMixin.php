@@ -36,19 +36,4 @@ class CollectionMixin
             });
         };
     }
-
-    public function csv(): callable
-    {
-        return function () {
-            $buffer = fopen('php://temp/maxmemory:' . (5 * 1024 * 1024), 'rb+');
-
-            $this->each(function ($line) use ($buffer) {
-                fputcsv($buffer, $line);
-            });
-
-            rewind($buffer);
-
-            return stream_get_contents($buffer);
-        };
-    }
 }

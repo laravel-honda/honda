@@ -1,5 +1,5 @@
-@extends('errors::illustrated-layout')
+@extends('errors.layout')
 
-@section('title', __('Unauthorized'))
+@section('title', __('errors.401'))
 @section('code', '401')
-@section('message', __('Unauthorized'))
+@section('message', __('errors.401'))

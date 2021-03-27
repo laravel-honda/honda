@@ -25,6 +25,7 @@
         "alpinejs": "^2.7.3",
         "autoprefixer": "^10.2.1",
         "postcss": "^8.2.4",
+        "puppeteer": "^8.0.0",
         "tailwindcss": "^2.0.2"
     }
 }
