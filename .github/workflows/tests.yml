@@ -64,7 +64,7 @@ jobs:
       - name: Setup project
         run: php artisan setup
       - name: Tests
-        run: pest --colors=always
+        run: ./vendor/bin/pest --colors=always
       - name: Code Sniffer
         run: ./vendor/bin/php-cs-fixer fix -v --dry-run
       - name: Statical analysis
