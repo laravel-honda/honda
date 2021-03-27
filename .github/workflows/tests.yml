@@ -1,4 +1,3 @@
-# https://ghygen.hi-folks.dev?code=7a4e3def4e202b04a618ab5ea8c196e1
 name: Tests
 on:
   push:
