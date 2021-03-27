@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60948938966373082e88eadeea1d8e1d",
+    "content-hash": "253fbc92ad70aa3f100efb7cf1419992",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1153,10 +1153,16 @@
         {
             "name": "honda/navigation",
             "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laravel-honda/navigation.git",
+                "reference": "c0dbba38d2b2a86591df0b4a7dd394aa7d536b38"
+            },
             "dist": {
-                "type": "path",
-                "url": "../navigation",
-                "reference": "5372f727f06f78cda009b30bda7039deb672882f"
+                "type": "zip",
+                "url": "https://api.github.com/repos/laravel-honda/navigation/zipball/c0dbba38d2b2a86591df0b4a7dd394aa7d536b38",
+                "reference": "c0dbba38d2b2a86591df0b4a7dd394aa7d536b38",
+                "shasum": ""
             },
             "require": {
                 "honda/ui": "dev-master",
@@ -1166,9 +1172,13 @@
                 "php": "^7.4"
             },
             "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.16.4",
                 "orchestra/testbench": "^6.13",
-                "phpunit/phpunit": "^9.3"
+                "pestphp/pest": "^0.3.8",
+                "phpstan/phpstan": "^0.12.48",
+                "symfony/var-dumper": "^5.2.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1182,11 +1192,7 @@
                     "Honda\\Navigation\\": "src"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Honda\\Navigation\\Tests\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -1203,9 +1209,11 @@
                 "honda",
                 "navigation"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/laravel-honda/navigation/issues",
+                "source": "https://github.com/laravel-honda/navigation/tree/master"
+            },
+            "time": "2021-03-27T10:48:51+00:00"
         },
         {
             "name": "honda/pushed-resources",
