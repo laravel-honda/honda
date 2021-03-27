@@ -13,7 +13,12 @@ class AppServiceProvider extends ServiceProvider
     {
         Navigation::register('dashboard', function (Navigation $navigation) {
             return $navigation
-                ->add('hello', fn(Item $item) => $item->icon('circle-check'));
+                ->add('hello', fn(Item $item) => $item->icon('circle-check'))
+                ->section('Abdul', function (Navigation $navigation) {
+                    return $navigation
+                        ->add('Dude', fn(Item $item) => $item->icon('access-point-off'))
+                        ->add('Work', fn(Item $item) => $item->icon('ambulance'));
+                });
         });
     }
 

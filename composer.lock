@@ -1156,7 +1156,7 @@
             "dist": {
                 "type": "path",
                 "url": "../navigation",
-                "reference": "2f7ff3a23d4e5745d1d32b292426f33a9f5849cf"
+                "reference": "5372f727f06f78cda009b30bda7039deb672882f"
             },
             "require": {
                 "honda/url-pattern-matcher": "^0.2",
@@ -1273,12 +1273,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-honda/ui.git",
-                "reference": "5ada665580be468173b79eb6d4158866cffe9e1d"
+                "reference": "aa1428fdc52c0c4a35afa0b89e185cc815d31abe"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-honda/ui/zipball/5ada665580be468173b79eb6d4158866cffe9e1d",
-                "reference": "5ada665580be468173b79eb6d4158866cffe9e1d",
+                "url": "https://api.github.com/repos/laravel-honda/ui/zipball/aa1428fdc52c0c4a35afa0b89e185cc815d31abe",
+                "reference": "aa1428fdc52c0c4a35afa0b89e185cc815d31abe",
                 "shasum": ""
             },
             "require": {
@@ -1321,7 +1321,7 @@
                 "issues": "https://github.com/laravel-honda/ui/issues",
                 "source": "https://github.com/laravel-honda/ui/tree/master"
             },
-            "time": "2021-03-26T06:43:03+00:00"
+            "time": "2021-03-27T09:40:34+00:00"
         },
         {
             "name": "honda/url-pattern-matcher",
