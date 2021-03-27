@@ -1,2 +1,3 @@
-<x-layout title="Welcome" description="My description" class="">
+<x-layout title="Welcome">
+
 </x-layout>

@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Support\Alert;
 use Illuminate\Http\Request;
 
 class ShowHomeController

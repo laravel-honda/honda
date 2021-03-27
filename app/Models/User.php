@@ -30,8 +30,8 @@ class User extends Authenticatable implements MustVerifyEmail
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
-        'email_verification_code' => 'integer'
+        'email_verified_at'       => 'datetime',
+        'email_verification_code' => 'integer',
     ];
 
     public function sendEmailVerificationNotification()
@@ -40,7 +40,7 @@ class User extends Authenticatable implements MustVerifyEmail
 
         if ($code === null) {
             $this->update([
-                'email_verification_code' => $code = $this->generateSecretCode(6)
+                'email_verification_code' => $code = $this->generateSecretCode(6),
             ]);
         }
 
@@ -55,7 +55,7 @@ class User extends Authenticatable implements MustVerifyEmail
             $code .= random_int(0, 9);
         }
 
-        return (int)$code;
+        return (int) $code;
     }
 
     public function checkEmailVerificationCode(int $code): bool

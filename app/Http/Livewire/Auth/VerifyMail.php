@@ -17,19 +17,18 @@ class VerifyMail extends Component
 
     public function checkForVerification(array $formData)
     {
-        $user = \request()->user();
+        $user             = \request()->user();
         $verificationCode = $formData['verification_code'];
-        $valid = $user->checkEmailVerificationCode((int) $verificationCode);
+        $valid            = $user->checkEmailVerificationCode((int) $verificationCode);
 
         if ($valid) {
             $user->markEmailAsVerified();
             event(new Verified($user));
+
             return redirect()->intended(RouteServiceProvider::HOME . '?verified=1');
         }
 
-        throw ValidationException::withMessages([
-            'verification_code' => 'Invalid code'
-        ]);
+        throw ValidationException::withMessages(['verification_code' => 'Invalid code']);
     }
 
     public function sendVerificationMail(Request $request)
