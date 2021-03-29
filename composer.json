@@ -1,5 +1,5 @@
 {
-    "name": "starts/starts",
+    "name": "honda/honda",
     "description": "",
     "license": "MIT",
     "type": "project",
@@ -8,6 +8,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
+        "honda/banners": "dev-master",
         "honda/laravel-datatables": "0.1.0",
         "honda/navigation": "dev-master",
         "honda/pushed-resources": "0.1.0",
@@ -17,15 +18,8 @@
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
         "ryangjchandler/blade-tabler-icons": "^0.5.0",
-        "spatie/browsershot": "^3.44",
-        "spatie/valuestore": "^1.2",
-        "starts/banners": "dev-master"
+        "spatie/valuestore": "^1.2"
     },
-    "repositories": [{
-        "type": "path",
-        "url": "../../Starts/laravel-banners"
-    }
-    ],
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
         "beyondcode/laravel-query-detector": "^1.4",

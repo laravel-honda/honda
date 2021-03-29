@@ -12,8 +12,8 @@ class Captcha
 
     /**
      * @param string $attribute
-     * @param mixed $value
-     * @return bool
+     * @param mixed  $value
+     *
      * @throws GuzzleException
      * @throws JsonException
      */
@@ -21,7 +21,7 @@ class Captcha
     {
         $data = json_decode((new Client())->post('https://hcaptcha.com/siteverify', [
             'form_params' => [
-                'secret' => config('services.hcaptcha.secret'),
+                'secret'   => config('services.hcaptcha.secret'),
                 'response' => $value,
             ],
         ])->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);

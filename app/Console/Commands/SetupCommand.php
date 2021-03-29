@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Commands;
+namespace App\Console\Commands;
 
 use Artisan;
 use Closure;
@@ -36,7 +36,7 @@ class SetupCommand extends Command
         return [
             'Copied .env.example to .env'  => 'cp .env.example .env',
             'Generated a fresh secret key' => fn () => Artisan::call('key:generate'),
-            'Created a new database'       => fn ()       => file_put_contents(
+            'Created a new database'       => fn () => file_put_contents(
                 database_path('database.sqlite'),
                 ''
             ),

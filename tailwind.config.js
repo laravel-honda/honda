@@ -1,7 +1,7 @@
 const plugin = require('tailwindcss/plugin')
 
 module.exports = {
-    purge: ['./storage/framework/views/*.php', './resources/views/**/*.blade.php'],
+    purge: ['./storage/framework/views/*.php', './resources/views/**/*.blade.php', './vendor/**/*.blade.php'],
     darkMode: false,
     theme: {
         extend: {
