@@ -10,6 +10,6 @@ class Translation extends Model
     use HasFactory;
 
     public $casts = [
-        'entries' => 'json'
+        'entries' => 'json',
     ];
 }

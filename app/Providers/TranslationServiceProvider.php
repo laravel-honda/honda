@@ -13,11 +13,9 @@ class TranslationServiceProvider extends ServiceProvider
      */
     public function sync()
     {
-        
     }
 
     public function boot()
     {
-        //
     }
 }

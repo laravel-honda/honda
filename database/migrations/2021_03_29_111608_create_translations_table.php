@@ -12,7 +12,7 @@ class CreateTranslationsTable extends Migration
             $table->id();
             $table->string('key');
             $table->json('entries');
-            $table->boolean('was_updated')->default(false)        
+            $table->boolean('was_updated')->default(false);
             $table->timestamps();
         });
     }

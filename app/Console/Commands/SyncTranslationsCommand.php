@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\TranslationManager;
 use Illuminate\Console\Command;
 
 class SyncTranslationsCommand extends Command
@@ -14,6 +15,5 @@ class SyncTranslationsCommand extends Command
 
     public function handle()
     {
-        dd(__());
     }
 }
