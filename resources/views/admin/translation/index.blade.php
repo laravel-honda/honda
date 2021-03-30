@@ -6,9 +6,9 @@
         <form action="{{ route('translations.missing') }}" method="GET">
             <div class="flex space-x-2">
                 <x-ui-select name="language"
-                             :values="app(\App\Services\TranslationManager::class)->languages()->toArray()"/>
+                             :values="app(\App\Services\Translation\TranslationFileManager::class)->languages()->toArray()"/>
                 <x-ui-select name="reference"
-                             :values="app(\App\Services\TranslationManager::class)->languages()->toArray()"/>
+                             :values="app(\App\Services\Translation\TranslationFileManager::class)->languages()->toArray()"/>
             </div>
             <x-ui-button content="Search" class="mt-4"/>
         </form>

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Services\Translation\Support;
 
 use Generator;
 use Illuminate\Support\Collection;
@@ -9,6 +9,8 @@ class TranslationKeysFlattener
 {
     /**
      * @param array|Collection $iterable
+     * @param string $separator
+     * @return array
      */
     public static function flatten($iterable, string $separator = '.'): array
     {
@@ -17,6 +19,9 @@ class TranslationKeysFlattener
 
     /**
      * @param array|Collection $iterable
+     * @param string $separator
+     * @param string $prefix
+     * @return Generator
      */
     protected static function flattenGenerator($iterable, string $separator, string $prefix): Generator
     {

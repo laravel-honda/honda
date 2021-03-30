@@ -3,8 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Models\Translation;
-use App\Services\TranslationKeysFlattener;
-use App\Services\TranslationManager;
+use App\Services\Translation\TranslationFileManager;
+use App\Services\Translation\TranslationKeysFlattener;
 use Illuminate\Console\Command;
 
 class SyncTranslationsCommand extends Command
@@ -17,7 +17,7 @@ class SyncTranslationsCommand extends Command
 
     public function handle()
     {
-        $manager  = new TranslationManager();
+        $manager  = new TranslationFileManager();
 
         $translations = $manager->translations();
 
@@ -32,11 +32,11 @@ class SyncTranslationsCommand extends Command
                 $this->line("Created \e[32m$key\e[0m in $lang");
                 return $translation;
             });
-            
+
             if ($translation->hasTranslation($lang) || $translation->getTranslation($lang) === $value) {
                 return;
             }
-            
+
             $translation->updateTranslation($lang, $value);
             $this->line("Created \e[32m$key\e[0m in $lang");
         });

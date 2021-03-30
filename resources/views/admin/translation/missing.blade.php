@@ -11,7 +11,7 @@
         </div>
 
         <ul class="space-y-4">
-            @foreach($missing->get(\App\Services\TranslationManager::KEY_MISSING) as $key)
+            @foreach($missing->get(\App\Services\Translation\TranslationFileManager::KEY_MISSING) as $key)
                 <li class="border bg-white p-4 rounded-lg">
                     <span class="text-gray-700 font-semibold">{{ $key }}</span>
                     <div class="mt-2">
@@ -19,11 +19,11 @@
                             name="original"
                             disabled
                             first
-                            :value="app(\App\Services\TranslationManager::class)->translateIn($reference, $key)"
+                            :value="app(\App\Services\Translation\TranslationFileManager::class)->translateIn($reference, $key)"
                         />
                         <x-ui-textarea
                             name="proposal"
-                            :value="app(\App\Services\TranslationManager::class)->findProposalFor($key, $language, $reference)"
+                            :value="app(\App\Services\Translation\TranslationFileManager::class)->findProposalFor($key, $language, $reference)"
                         />
                     </div>
                     <x-ui-button content="Use" class="mt-4"/>
