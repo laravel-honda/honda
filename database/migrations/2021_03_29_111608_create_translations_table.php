@@ -9,10 +9,9 @@ class CreateTranslationsTable extends Migration
     public function up(): void
     {
         Schema::create('translations', function (Blueprint $table) {
-            $table->id();
-            $table->string('key');
+            $table->uuid('id');
+            $table->string('key')->unique();
             $table->json('entries');
-            $table->boolean('was_updated')->default(false);
             $table->timestamps();
         });
     }

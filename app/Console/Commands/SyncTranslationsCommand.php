@@ -2,6 +2,8 @@
 
 namespace App\Console\Commands;
 
+use App\Models\Translation;
+use App\Services\TranslationKeysFlattener;
 use App\Services\TranslationManager;
 use Illuminate\Console\Command;
 
@@ -15,5 +17,28 @@ class SyncTranslationsCommand extends Command
 
     public function handle()
     {
+        $manager  = new TranslationManager();
+
+        $translations = $manager->translations();
+
+        collect(TranslationKeysFlattener::flatten($translations))->each(function ($value, string $key) {
+            [$lang, $key] = explode('.', $key, 2);
+
+            $translation = Translation::where('key', $key)->firstOr(function () use ($key, $lang, $value) {
+                $translation = Translation::create([
+                    'key' => $key,
+                    'entries' => [$lang => $value]
+                ]);
+                $this->line("Created \e[32m$key\e[0m in $lang");
+                return $translation;
+            });
+            
+            if ($translation->hasTranslation($lang) || $translation->getTranslation($lang) === $value) {
+                return;
+            }
+            
+            $translation->updateTranslation($lang, $value);
+            $this->line("Created \e[32m$key\e[0m in $lang");
+        });
     }
 }

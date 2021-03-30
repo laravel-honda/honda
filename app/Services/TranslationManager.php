@@ -21,7 +21,7 @@ class TranslationManager
 
     public function translations(): Collection
     {
-        return $this->translations()->mapWithKeys(fn ($language) => [$language => $this->language($language)]);
+        return $this->languages()->mapWithKeys(fn ($language) => [$language => $this->language($language)]);
     }
 
     public function language(string $lang = null): Collection
