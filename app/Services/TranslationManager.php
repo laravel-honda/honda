@@ -56,9 +56,12 @@ class TranslationManager
     }
 
     /**
+     * @param string $lang
+     * @param string $key
+     * @param array $context
      * @return array|string|null
      */
-    private function translateIn(string $lang, string $key, array $context = [])
+    public function translateIn(string $lang, string $key, array $context = [])
     {
         return __($key, $context, $lang);
     }
