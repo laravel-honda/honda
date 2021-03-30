@@ -18,10 +18,11 @@
                     </p>
 
                     <div class="flex justify-between items-center mt-2">
-                        <x-ui-overline content="Proposal" color="gray" />
+                        <x-ui-overline content="Proposal" color="gray"/>
                     </div>
                     <p class="text-gray-700 mt-1 flex items-center">
-                        Le champ :attribute est prohibé. <x-ui-icon class="text-gray-500 ml-2" name="pencil" size="4" />
+                        {{ app(\App\Services\TranslationManager::class)->findProposalFor($key, $language, $reference) }}
+                        <x-ui-icon class="text-gray-500 ml-2" name="pencil" size="4"/>
                     </p>
                     <div class="flex space-x-4">
                         <x-ui-button content="Use" class="mt-4"/>
