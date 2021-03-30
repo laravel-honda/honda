@@ -115,6 +115,8 @@ class TranslationManager
             return Cache::get($cacheKey);
         }
 
+        // We hide any attribute from Google by transforming :this to __@this.com which should never be
+        // translated by Google Translate based on my tests and readings.
         $translated = $translator->translate(
             preg_replace('/:([a-zA-Z]+)/', '__@$1.com', $this->translateIn($from, $key))
         );
