@@ -1,7 +1,10 @@
 <?php
 
-
+use App\Services\Translation\Managers\FileManager;
 use App\Services\Translation\Support\TranslationKeysFlattener;
+use Tests\TestCase;
+
+uses(TestCase::class);
 
 it('can flatten keys recursively', function () {
     $flattened = TranslationKeysFlattener::flatten([
@@ -19,3 +22,5 @@ it('can flatten keys recursively', function () {
         'foo' => 'bar'
     ]);
 });
+
+

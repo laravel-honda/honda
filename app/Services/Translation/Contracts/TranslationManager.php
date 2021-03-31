@@ -10,16 +10,15 @@ interface TranslationManager
     public const KEY_MISSING = 'key missing';
     public const GROUP_MISSING = 'group missing';
 
-    public function getAllTranslations(): Collection;
+    public function getAllTranslations(): array;
 
-    public function getTranslations(string $lang): Collection;
+    public function getTranslations(string $lang): array;
 
+    public function getMissingTranslations(string $lang, string $reference = null): array;
 
-    public function getMissingTranslations(string $lang, string $reference = null): Collection;
+    public function getLanguages(): array;
 
-    public function getLanguages(): Collection;
-
-    public function getLanguageGroups(string $lang): Collection;
+    public function getLanguageGroups(string $lang): array;
 
     public function hasLanguage(string $lang): bool;
 
