@@ -3,8 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\Translation;
-use App\Services\Translation\TranslationFileManager;
-use App\Services\Translation\TranslationKeysFlattener;
+use App\Services\Translation\Managers\FileManager;
 use Illuminate\Console\Command;
 
 class SyncTranslationsCommand extends Command
@@ -17,9 +16,13 @@ class SyncTranslationsCommand extends Command
 
     public function handle()
     {
-        $manager  = new TranslationFileManager();
+        $manager = new FileManager();
 
-        $translations = $manager->translations();
+        $manager->removeTranslation('fr', 'some.key');
+
+        return;
+
+        $translations = $manager->getTranslations();
 
         collect(TranslationKeysFlattener::flatten($translations))->each(function ($value, string $key) {
             [$lang, $key] = explode('.', $key, 2);
