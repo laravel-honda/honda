@@ -139,21 +139,29 @@ class FileManager implements TranslationManager
     public function removeTranslation(string $lang, string $key): TranslationManager
     {
         [$group, $key] = explode('.', $key, 2);
+        $key = $this->getSafePhpString($key);
+        $value = $this->getSafePhpString($this->translate("{$group}.{$key}", $lang));
         $file = $this->getTranslationFile($lang, $group);
-        $value = preg_replace('/("\')/', '\\$1', $this->translate("{$group}.{$key}", $lang));
         file_put_contents(
             $file,
-            preg_replace(
-                "/\\s*\"$key\"\\s*=>\\s*\"$value\"\\s*,?/m",
-                '',
-                file_get_contents($file)
-            )
+            preg_replace("/\\s*\"$key\"\\s*=>\\s*\"$value\"\\s*,?/m", '', file_get_contents($file))
         );
         return  $this;
     }
 
+    public function getSafePhpString(string $value): string {
+        return preg_replace('/([\'"])/', '\\$1', $value);
+    }
+
     public function updateTranslation(string $lang, string $key, string $value): TranslationManager
     {
-        // TODO: Implement updateTranslation() method.
+        [$group, $key] = explode('.', $key, 2);
+        $value = $this->getSafePhpString($value);
+        $file = $this->getTranslationFile($lang, $group);
+        file_put_contents(
+            $file,
+            preg_replace("/(\\s*\"$key\"\\s*=>\\s*)\"$value\"\\s*,?/m", "$1\"$value\",", file_get_contents(\$file))
+        );
+        return  \$this;
     }
 }
