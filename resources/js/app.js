@@ -1,5 +1,13 @@
 require('alpinejs')
 
+
+document.addEventListener('livewire:load', () => {
+    setInterval(function () {
+        window.livewire.emit('alive');
+    }, 1800000);
+});
+
+
 const livewireShouldObserve = (el) => !el.tagName.includes("-") || el.hasAttribute('wire:observe')
 
 /**
