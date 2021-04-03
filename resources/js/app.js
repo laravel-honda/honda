@@ -23,7 +23,6 @@ window.livewire.hook('element.initialized', (el) => {
 
 window.livewire.hook('element.updating', (fromEl, toEl, component) => {
     if (!livewireShouldObserve(fromEl)) {
-        o
         return;
     }
 
