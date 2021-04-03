@@ -23,7 +23,6 @@ class HondaServiceProvider extends ServiceProvider
     {
         $this->app->bind(Valuestore::class, fn () => Valuestore::make(storage_path('app/settings.json')));
         $this->app->bind('settings', fn () => app(Valuestore::class));
-        $this->app->singleton(Alert::class, fn () => new Alert());
 
         View::share(['settings' => app('settings')]);
 
