@@ -1,13 +1,10 @@
 <?php
 
-
 namespace App\Services\Translation\Contracts;
-
-use Illuminate\Support\Collection;
 
 interface TranslationManager
 {
-    public const KEY_MISSING = 'key missing';
+    public const KEY_MISSING   = 'key missing';
     public const GROUP_MISSING = 'group missing';
 
     public function getAllTranslations(): array;

@@ -2,7 +2,6 @@
 
 namespace App\Providers;
 
-use App\Support\Alert;
 use App\Support\Mixins\CollectionMixin;
 use App\Support\Mixins\StrMixin;
 use Blade;

@@ -29,10 +29,11 @@ class SyncTranslationsCommand extends Command
 
             $translation = Translation::where('key', $key)->firstOr(function () use ($key, $lang, $value) {
                 $translation = Translation::create([
-                    'key' => $key,
-                    'entries' => [$lang => $value]
+                    'key'     => $key,
+                    'entries' => [$lang => $value],
                 ]);
                 $this->line("Created \e[32m$key\e[0m in $lang");
+
                 return $translation;
             });
 

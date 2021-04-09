@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Services\Translation\Managers;
-
 
 use App\Services\Translation\Contracts\TranslationManager;
 use App\Services\Translation\Support\TranslationKeysFlattener;
@@ -10,7 +8,6 @@ use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\File;
 use InvalidArgumentException;
-use RuntimeException;
 use Symfony\Component\Finder\SplFileInfo;
 
 class FileManager implements TranslationManager
@@ -25,22 +22,23 @@ class FileManager implements TranslationManager
     public function getAllTranslations(): array
     {
         return collect($this->getLanguages())
-            ->mapWithKeys(fn($language) => [$language => $this->getTranslations($language)])
+            ->mapWithKeys(fn ($language) => [$language => $this->getTranslations($language)])
             ->toArray();
     }
 
     public function getLanguages(): array
     {
         return collect(File::directories($this->translationsPath))
-            ->map(fn(string $path) => str_replace($this->translationsPath . '/', '', $path))
+            ->map(fn (string $path) => str_replace($this->translationsPath . '/', '', $path))
             ->toArray();
     }
 
     public function getTranslations(string $lang): array
     {
         $groups = $this->getLanguageGroups($lang);
+
         return collect($groups)->combine(
-            collect($groups)->map(fn($group) => collect($this->translate($group, $lang)))
+            collect($groups)->map(fn ($group) => collect($this->translate($group, $lang)))
         )->sort()->toArray();
     }
 
@@ -52,9 +50,9 @@ class FileManager implements TranslationManager
         }
 
         return Collection::fromFiles("{$this->translationsPath}/{$lang}")
-            ->map(fn(SplFileInfo $file) => $file->getPathname())
-            ->map(fn(string $file) => str_replace(["{$this->translationsPath}/{$lang}", '/', '.php'], ['', '.', ''], $file))
-            ->map(fn(string $file) => trim($file, '.'))
+            ->map(fn (SplFileInfo $file) => $file->getPathname())
+            ->map(fn (string $file)      => str_replace(["{$this->translationsPath}/{$lang}", '/', '.php'], ['', '.', ''], $file))
+            ->map(fn (string $file)      => trim($file, '.'))
             ->toArray();
     }
 
@@ -66,6 +64,7 @@ class FileManager implements TranslationManager
     public function translate(string $key, string $language, array $context = []): string
     {
         dd($key, $language, $context);
+
         return __($key, $context, $language);
     }
 
@@ -79,11 +78,11 @@ class FileManager implements TranslationManager
 
         $missing = [
             static::GROUP_MISSING => [],
-            static::KEY_MISSING => [],
+            static::KEY_MISSING   => [],
         ];
 
         $translationsForReference = $this->getTranslations($reference);
-        $translationsForLang = $this->getTranslations($lang);
+        $translationsForLang      = $this->getTranslations($lang);
 
         collect($translationsForReference)
             ->diffKeys($translationsForLang)
@@ -94,7 +93,7 @@ class FileManager implements TranslationManager
 
         collect(TranslationKeysFlattener::flatten($translationsForReference))
             ->diffKeys(TranslationKeysFlattener::flatten($translationsForLang))
-            ->filter(fn($_, $key) => !in_array(explode('.', $key)[0], $missing[static::GROUP_MISSING]))
+            ->filter(fn ($_, $key) => !in_array(explode('.', $key)[0], $missing[static::GROUP_MISSING]))
             ->each(function ($_, $key) use (&$missing) {
                 $missing[static::KEY_MISSING][] = $key;
             });
@@ -122,7 +121,8 @@ class FileManager implements TranslationManager
         return "{$this->translationsPath}/{$lang}/{$group}.php";
     }
 
-    public function createTranslationFile(string $lang, string $group): self {
+    public function createTranslationFile(string $lang, string $group): self
+    {
         $file = $this->getTranslationFile($lang, $group);
 
         if (!file_exists($file)) {
@@ -145,17 +145,19 @@ class FileManager implements TranslationManager
     public function removeTranslation(string $lang, string $key): TranslationManager
     {
         [$group, $key] = explode('.', $key, 2);
-        $key = $this->getSafePhpString($key);
-        $value = $this->getSafePhpString($this->translate("{$group}.{$key}", $lang));
-        $file = $this->getTranslationFile($lang, $group);
+        $key           = $this->getSafePhpString($key);
+        $value         = $this->getSafePhpString($this->translate("{$group}.{$key}", $lang));
+        $file          = $this->getTranslationFile($lang, $group);
         file_put_contents(
             $file,
             preg_replace("/\\s*\"$key\"\\s*=>\\s*\"$value\"\\s*,?/m", '', file_get_contents($file))
         );
-        return  $this;
+
+        return $this;
     }
 
-    public function getSafePhpString(string $value): string {
+    public function getSafePhpString(string $value): string
+    {
         return preg_replace('/([\'"])/', '\\$1', $value);
     }
 
