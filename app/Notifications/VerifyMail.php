@@ -15,26 +15,12 @@ class VerifyMail extends Notification
         $this->code = $code;
     }
 
-    /**
-     * Get the notification's delivery channels.
-     *
-     * @param mixed $notifiable
-     *
-     * @return array
-     */
-    public function via($notifiable)
+    public function via(): array
     {
         return ['mail'];
     }
 
-    /**
-     * Get the mail representation of the notification.
-     *
-     * @param mixed $notifiable
-     *
-     * @return MailMessage
-     */
-    public function toMail(User $user)
+    public function toMail(User $user): MailMessage
     {
         return (new MailMessage())
             ->subject(sprintf('[%s] Please verify your email address', config('app.name')))
@@ -45,18 +31,5 @@ class VerifyMail extends Notification
             ->line($this->code)
             ->line('')
             ->line(sprintf('You’re receiving this email because you recently created a new %s account or added a new email address. If this wasn’t you, please ignore this email.', config('app.name')));
-    }
-
-    /**
-     * Get the array representation of the notification.
-     *
-     * @param mixed $notifiable
-     *
-     * @return array
-     */
-    public function toArray($notifiable)
-    {
-        return [
-        ];
     }
 }

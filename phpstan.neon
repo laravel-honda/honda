@@ -1,12 +1,17 @@
 includes:
-    - ./vendor/nunomaduro/larastan/extension.neon
+  - ./vendor/nunomaduro/larastan/extension.neon
 
 parameters:
-    level: 7
-    paths:
-        - app
-    excludePaths:
-        - app/Livewire
-    ignoreErrors:
-        - '#Unsafe usage of new static#'
-    checkMissingIterableValueType: false
+
+  paths:
+    - app
+
+  # The level 8 is the highest level
+  level: 5
+
+  excludePaths:
+    - ./app/Services
+    - ./app/Http/Controllers/Translations/TranslationsController.php
+    - ./app/Console/Commands/SyncTranslationsCommand.php
+
+  checkMissingIterableValueType: false

@@ -7,13 +7,6 @@ use Illuminate\Mail\Events\MessageSending;
 
 class CreateOnlineVersion
 {
-    /**
-     * Handle the event.
-     *
-     * @param object $event
-     *
-     * @return void
-     */
     public function handle(MessageSending $event)
     {
         $onlineVersion = OnlineMailable::create([

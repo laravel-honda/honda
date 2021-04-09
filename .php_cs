@@ -18,6 +18,7 @@ $rules = [
             '='  => 'align',
         ],
     ],
+    'phpdoc_to_comment'       => false,
     'concat_space'            => ['spacing' => 'one'],
     'not_operator_with_space' => false,
 ];

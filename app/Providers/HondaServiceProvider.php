@@ -26,6 +26,7 @@ class HondaServiceProvider extends ServiceProvider
         View::share(['settings' => app('settings')]);
 
         ComponentAttributeBag::macro('hasAnyOf', function (...$attributes) {
+            /** @var ComponentAttributeBag $this */
             return count(
                     $this->filter(fn ($_, $attribute) => in_array($attribute, $attributes))->getAttributes()
                 ) > 0;

@@ -15,19 +15,25 @@ class ClearLogsCommand extends Command
     public function handle()
     {
         if (config('logging.default') !== 'stack') {
-            return $this->error('The clear:logs command only works with the [stack] log driver');
+            $this->error('The clear:logs command only works with the [stack] log driver');
+
+            return;
         }
 
         $file = storage_path('logs/' . $this->argument('file'));
 
         if (!file_exists($file)) {
-            return $this->error('The given file does not exist.');
+            $this->error('The given file does not exist.');
+
+            return;
         }
 
         $result = file_put_contents($file, '');
 
         if ($result === false) {
-            return $this->error("Can not clear [$file]");
+            $this->error("Can not clear [$file]");
+
+            return;
         }
 
         $this->info('Log file cleared successfully');
