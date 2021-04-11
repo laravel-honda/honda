@@ -32,9 +32,4 @@ return [
     'mapbox' => [
         'public_token' => env('MAPBOX_PUBLIC_TOKEN'),
     ],
-
-    'hcaptcha' => [
-        'sitekey' => env('HCAPTCHA_SITEKEY'),
-        'secret'  => env('HCAPTCHA_SECRET'),
-    ],
 ];
