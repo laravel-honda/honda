@@ -9,17 +9,15 @@
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "honda/banners": "dev-master",
-        "honda/laravel-datatables": "0.1.0",
+        "honda/laravel-datatables": "0.1.1",
         "honda/navigation": "dev-master",
-        "honda/pushed-resources": "0.1.0",
+        "honda/pushed-resources": "dev-master",
         "honda/ui": "dev-master",
         "imliam/laravel-blade-helper": "^1.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
-        "ryangjchandler/blade-tabler-icons": "^0.5.0",
-        "spatie/valuestore": "^1.2",
-        "stichoza/google-translate-php": "^4.1"
+        "spatie/valuestore": "^1.2"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",

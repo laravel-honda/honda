@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ShowHomeController
+class ShowManagerController
 {
     public function __invoke(Request $request)
     {
