@@ -1,12 +1,10 @@
 require('alpinejs')
 
-
 document.addEventListener('livewire:load', () => {
     setInterval(function () {
         window.livewire.emit('alive');
     }, 1800000);
 });
-
 
 const livewireShouldObserve = (el) => !el.tagName.includes("-") || el.hasAttribute('wire:observe')
 
@@ -14,7 +12,7 @@ const livewireShouldObserve = (el) => !el.tagName.includes("-") || el.hasAttribu
  * Prevents Livewire from tracking web components unless wire:observe is provided
  */
 window.livewire.hook('element.initialized', (el) => {
-    if (!livewireShouldObserve(el)) {
+    if (livewireShouldObserve(el)) {
         return;
     }
 
