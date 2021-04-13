@@ -52,8 +52,8 @@ class HondaServiceProvider extends ServiceProvider
     {
         BladeHelper::directive('setting', fn ($key) => app('settings')->get($key));
         BladeHelper::directive('markdown', fn ($markdown) => Markdown::parse($markdown));
-        Blade::directive('alpine', function (string $variables) {
-            return <<<PHP
+               Blade::directive('alpine', function (string $variables) {
+            return <<<DIRECTIVE
                 <?php
                     \$data = array_combine(
                         array_map(
@@ -61,14 +61,27 @@ class HondaServiceProvider extends ServiceProvider
                             explode(',', '$variables')
                         ),
                         [$variables]
-                    )
-
-                    echo trim(
-                        str_replace(["'", '"'], ["\'", "'"], json_encode(\$data)),
-                        '{}'
                     );
+
+                    \$replaced = str_replace(["'", '"'], ["\'", "'"], json_encode(\$data));
+
+                    if (str_starts_with(\$replaced, '{')) {
+                        \$replaced = substr(\$replaced, 1);
+                    }
+
+                    if (str_ends_with(\$replaced, '}')) {
+                        \$replaced = substr(\$replaced, 0, -1);
+                    }
                 ?>
-            PHP;
+DIRECTIVE;
+        });
+        Blade::directive('js', function (string $variable) {
+            return <<<DIRECTIVE
+                <?php
+                \$trimmed = str_replace('$', $variable);
+
+                echo str_replace(["'", '"'], ["\'", "'"], \$trimmed);
+                DIRECTIVE;
         });
     }
 }
