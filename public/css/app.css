@@ -2331,12 +2331,6 @@ select{
   display: none;
 }
 
-/* Fixes a weird bug that adds a trailing line to every code block */
-
-.prose pre code::after {
-  display: none;
-}
-
 .space-y-0 > :not([hidden]) ~ :not([hidden]){
   --tw-space-y-reverse: 0;
   margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
@@ -33403,6 +33397,19 @@ select{
 .animate-bounce{
   -webkit-animation: bounce 1s infinite;
           animation: bounce 1s infinite;
+}
+
+[contenteditable]:empty:before {
+  content: attr(placeholder);
+  pointer-events: none;
+  outline: none;
+  display: block; /* For Firefox */
+}
+
+/* Fixes a weird bug that adds a trailing line to every code block */
+
+.prose pre code::after {
+  display: none;
 }
 
 [x-cloak] {

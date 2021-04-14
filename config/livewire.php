@@ -30,6 +30,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | Layout
+    |--------------------------------------------------------------------------
+    | The default layout view that will be used when rendering a component via
+    | Route::get('/some-endpoint', SomeComponent::class);. In this case the
+    | the view returned by SomeComponent will be wrapped in "layouts.app"
+    |
+    */
+
+    'layout' => 'layouts.app',
+
+    /*
+    |--------------------------------------------------------------------------
     | Livewire Assets URL
     |--------------------------------------------------------------------------
     |
@@ -41,7 +53,7 @@ return [
     |
     */
 
-    'asset_url'  => null,
+    'asset_url' => null,
 
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +66,7 @@ return [
     |
     */
 
-    'middleware_group'  => 'web',
+    'middleware_group' => 'web',
 
     /*
     |--------------------------------------------------------------------------
@@ -76,8 +88,9 @@ return [
         'preview_mimes' => [   // Supported file types for temporary pre-signed file URLs.
             'png', 'gif', 'bmp', 'svg', 'wav', 'mp4',
             'mov', 'avi', 'wmv', 'mp3', 'm4a',
-            'jpeg', 'mpga', 'webp', 'wma',
+            'jpg', 'jpeg', 'mpga', 'webp', 'wma',
         ],
+        'max_upload_time' => 5, // Max duration (in minutes) before an upload gets invalidated.
     ],
 
     /*

@@ -15,13 +15,17 @@
     <meta property="og:url" content="{{ request()->url() }}"/>
     <meta property="og:locale" content="{{ App::getLocale() }}"/>
     <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
-    @livewireStyles
+    <livewire:styles/>
     <x-assets-style href="css/app.css"/>
-    <x-assets-script href="js/app.js"/>
-    <x-assets-resources/>
+    <x-assets-resources type="style"/>
+    <x-assets-resources type="raw-style"/>
 </head>
 <body {{ $attributes->merge(['class' => "bg-gray-100 font-medium"])}}>
 {{ $slot }}
+
 @livewireScripts
+<x-assets-script href="js/app.js"/>
+<x-assets-resources type="script"/>
+<x-assets-resources type="raw-script"/>
 </body>
 </html>

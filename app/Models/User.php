@@ -6,6 +6,7 @@ use App\Models\Concerns\Searchable;
 use App\Notifications\VerifyMail;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
@@ -61,5 +62,10 @@ class User extends Authenticatable implements MustVerifyEmail
     public function checkEmailVerificationCode(int $code): bool
     {
         return $this->email_verification_code === $code;
+    }
+
+    public function articles(): HasMany
+    {
+        return $this->hasMany(Article::class);
     }
 }

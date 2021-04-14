@@ -7,7 +7,7 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Gilroy', 'sans-serif']
-            }
+            },
         },
     },
     variants: {
@@ -17,7 +17,7 @@ module.exports = {
         }
     },
     plugins: [
-        require('@tailwindcss/forms'),
+        require("@tailwindcss/forms"),
         require('@tailwindcss/typography'),
         require('@tailwindcss/aspect-ratio'),
         plugin(({addComponents}) => {

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5dc5c548bc74ce1bd118bbdb2b440f9d",
+    "content-hash": "bbdb5000f9f83291be08ab4005bb8a95",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1059,16 +1059,16 @@
         },
         {
             "name": "honda/laravel-datatables",
-            "version": "0.1.1",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-honda/laravel-datatables.git",
-                "reference": "63e961a71df8b8147fac4b8cb61fb00a534563b5"
+                "reference": "5a4b4d2445d359ac43db559996040ea6c1af0554"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-honda/laravel-datatables/zipball/63e961a71df8b8147fac4b8cb61fb00a534563b5",
-                "reference": "63e961a71df8b8147fac4b8cb61fb00a534563b5",
+                "url": "https://api.github.com/repos/laravel-honda/laravel-datatables/zipball/5a4b4d2445d359ac43db559996040ea6c1af0554",
+                "reference": "5a4b4d2445d359ac43db559996040ea6c1af0554",
                 "shasum": ""
             },
             "require": {
@@ -1087,6 +1087,7 @@
                 "phpstan/phpstan": "^0.12.48",
                 "symfony/var-dumper": "^5.2.0"
             },
+            "default-branch": true,
             "type": "library",
             "extra": {
                 "laravel": {
@@ -1118,9 +1119,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-honda/laravel-datatables/issues",
-                "source": "https://github.com/laravel-honda/laravel-datatables/tree/0.1.1"
+                "source": "https://github.com/laravel-honda/laravel-datatables/tree/master"
             },
-            "time": "2021-04-03T12:16:03+00:00"
+            "time": "2021-04-13T09:04:35+00:00"
         },
         {
             "name": "honda/navigation",
@@ -1128,12 +1129,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-honda/navigation.git",
-                "reference": "300418c2bdcabb2f240dcff0b994a4be98d8cb63"
+                "reference": "908309c5d4ea5e5ea3dd33dda2e94b0b3d6952ee"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-honda/navigation/zipball/300418c2bdcabb2f240dcff0b994a4be98d8cb63",
-                "reference": "300418c2bdcabb2f240dcff0b994a4be98d8cb63",
+                "url": "https://api.github.com/repos/laravel-honda/navigation/zipball/908309c5d4ea5e5ea3dd33dda2e94b0b3d6952ee",
+                "reference": "908309c5d4ea5e5ea3dd33dda2e94b0b3d6952ee",
                 "shasum": ""
             },
             "require": {
@@ -1186,7 +1187,7 @@
                 "issues": "https://github.com/laravel-honda/navigation/issues",
                 "source": "https://github.com/laravel-honda/navigation/tree/master"
             },
-            "time": "2021-04-11T14:50:17+00:00"
+            "time": "2021-04-13T13:08:48+00:00"
         },
         {
             "name": "honda/pushed-resources",
@@ -1194,12 +1195,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-honda/pushed-resources.git",
-                "reference": "b7472cb09c8e85aa115775aa05d07519be35f80f"
+                "reference": "87151568f8f270755e4c32bc27bd587c8eb5d950"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-honda/pushed-resources/zipball/b7472cb09c8e85aa115775aa05d07519be35f80f",
-                "reference": "b7472cb09c8e85aa115775aa05d07519be35f80f",
+                "url": "https://api.github.com/repos/laravel-honda/pushed-resources/zipball/87151568f8f270755e4c32bc27bd587c8eb5d950",
+                "reference": "87151568f8f270755e4c32bc27bd587c8eb5d950",
                 "shasum": ""
             },
             "require": {
@@ -1228,7 +1229,10 @@
             "autoload": {
                 "psr-4": {
                     "Honda\\PushedResources\\": "src"
-                }
+                },
+                "files": [
+                    "src/Helpers/helpers.php"
+                ]
             },
             "notification-url": "https://packagist.org/downloads/",
             "license": [
@@ -1249,9 +1253,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-honda/pushed-resources/issues",
-                "source": "https://github.com/laravel-honda/pushed-resources/tree/master"
+                "source": "https://github.com/laravel-honda/pushed-resources/tree/0.3.0"
             },
-            "time": "2021-04-12T17:03:32+00:00"
+            "time": "2021-04-13T11:09:37+00:00"
         },
         {
             "name": "honda/ui",
@@ -1559,16 +1563,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v8.36.2",
+            "version": "v8.37.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0debd8ad6b5aa1f61ccc73910adf049af4ca0444"
+                "reference": "cf4082973abc796ec285190f0603380021f6d26f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0debd8ad6b5aa1f61ccc73910adf049af4ca0444",
-                "reference": "0debd8ad6b5aa1f61ccc73910adf049af4ca0444",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/cf4082973abc796ec285190f0603380021f6d26f",
+                "reference": "cf4082973abc796ec285190f0603380021f6d26f",
                 "shasum": ""
             },
             "require": {
@@ -1723,7 +1727,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2021-04-07T12:37:22+00:00"
+            "time": "2021-04-13T13:49:49+00:00"
         },
         {
             "name": "laravel/tinker",
@@ -7270,6 +7274,64 @@
             "time": "2020-05-27T16:41:55+00:00"
         },
         {
+            "name": "laracasts/generators",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/laracasts/Laravel-5-Generators-Extended.git",
+                "reference": "0b8b3d300cc948217f7547502b6de5db6fbafa70"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/laracasts/Laravel-5-Generators-Extended/zipball/0b8b3d300cc948217f7547502b6de5db6fbafa70",
+                "reference": "0b8b3d300cc948217f7547502b6de5db6fbafa70",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~6.0|~7.0|~8.0"
+            },
+            "require-dev": {
+                "phpspec/phpspec": "~6.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Laracasts\\Generators\\GeneratorsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laracasts\\Generators\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jeffrey Way",
+                    "email": "jeffrey@laracasts.com"
+                },
+                {
+                    "name": "Cristian Tabacitu",
+                    "email": "hello@tabaciu.ro"
+                }
+            ],
+            "description": "Advanced Laravel generators, that include schema information.",
+            "keywords": [
+                "generators",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/laracasts/Laravel-5-Generators-Extended/issues",
+                "source": "https://github.com/laracasts/Laravel-5-Generators-Extended/tree/2.0.0"
+            },
+            "time": "2020-09-10T13:49:13+00:00"
+        },
+        {
             "name": "maximebf/debugbar",
             "version": "v1.16.5",
             "source": {
@@ -10490,6 +10552,7 @@
     "minimum-stability": "dev",
     "stability-flags": {
         "honda/banners": 20,
+        "honda/laravel-datatables": 20,
         "honda/navigation": 20,
         "honda/pushed-resources": 20,
         "honda/ui": 20

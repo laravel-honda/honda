@@ -1,6 +1,5 @@
 <?php
 
-use App\Models\User;
 use Illuminate\Contracts\Auth\Authenticatable;
 use Spatie\Valuestore\Valuestore;
 
@@ -29,5 +28,12 @@ if (!function_exists('user')) {
     function user(): ?Authenticatable
     {
         return auth()->user();
+    }
+}
+
+if (!function_exists('js')) {
+    function js(string $variable): string
+    {
+        return "'" . str_replace(["'", '"'], ["\'", "'"], $variable) . "'";
     }
 }
