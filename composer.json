@@ -28,7 +28,7 @@
         "laracasts/generators": "^2.0",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^5.0",
-        "nunomaduro/larastan": "^0.6.12",
+        "nunomaduro/larastan": "^0.7.4",
         "pestphp/pest": "^0.3.14",
         "pestphp/pest-plugin-laravel": "^0.3.0"
     },
