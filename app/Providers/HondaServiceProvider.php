@@ -30,8 +30,7 @@ class HondaServiceProvider extends ServiceProvider
             return count(
                     $this->filter(fn ($_, $attribute) => in_array($attribute, $attributes))->getAttributes()
                 ) > 0;
-        });  
-        Schema::defaultStringLength(191);
+        });
     }
 
     public function register(): void

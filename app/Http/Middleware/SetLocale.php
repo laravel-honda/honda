@@ -13,14 +13,6 @@ class SetLocale
 
     public function handle(Request $request, Closure $next)
     {
-        if (in_array($request->get('hl'), static::ALLOWED_LANGUAGES)) {
-            session()->put('hl', $request->get('hl'));
-        }
-
-        if (session('hl') && is_null($request->get('hl'))) {
-            $request->query->set('hl', session('hl'));
-        }
-
         if (($lang = $request->get('hl')) && (in_array($lang, static::ALLOWED_LANGUAGES) || static::ALLOWED_LANGUAGES === ['*'])) {
             App::setLocale($lang);
 

@@ -10,14 +10,14 @@ class {{ class }}
 {
     public function index()
     {
-        return view('admin.{{ modelVariable }}.index', [
+        return view('front.{{ modelVariable }}.index', [
             '{{ modelVariable }}s' => {{ model }}::all()
         ]);
     }
 
     public function create()
     {
-        return view('admin.{{ modelVariable }}.create');
+        return view('front.{{ modelVariable }}.create');
     }
 
     public function store(Request $request): RedirectResponse
@@ -33,14 +33,14 @@ class {{ class }}
 
     public function show({{ model }} ${{ modelVariable }})
     {
-        return view('admin.{{ modelVariable }}.show', [
+        return view('front.{{ modelVariable }}.show', [
             '{{ modelVariable }}' => ${{ modelVariable }}
         ]);
     }
 
     public function edit({{ model }} ${{ modelVariable }})
     {
-        return view('admin.{{ modelVariable }}.edit', [
+        return view('front.{{ modelVariable }}.edit', [
             '{{ modelVariable }}' => ${{ modelVariable }}
         ]);
     }
