@@ -7,7 +7,9 @@ use Illuminate\Console\Command;
 
 class StorageMakeCommand extends Command
 {
+    /** @var string */
     protected $signature   = 'make:storage {name} {--driver=local} {--root=} {--private}';
+    /** @var string */
     protected $description = 'Creates a view programmatically';
 
     public function handle(): void

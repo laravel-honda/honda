@@ -6,12 +6,7 @@ use Illuminate\Mail\Events\MessageSending;
 
 class AppendUrlToMailable
 {
-    /**
-     * Handle the event.
-     *
-     * @return void
-     */
-    public function handle(MessageSending $event)
+    public function handle(MessageSending $event): void
     {
         $event->message->setBody(
             preg_replace('/(\<body .+>)/', '$1' . $this->getBanner($event), $event->message->getBody())

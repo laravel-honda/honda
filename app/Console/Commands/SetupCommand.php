@@ -8,7 +8,9 @@ use Illuminate\Console\Command;
 
 class SetupCommand extends Command
 {
+    /** @var string */
     protected $signature   = 'setup';
+    /** @var string */
     protected $description = 'Configure the project after a fresh install';
 
     public function handle(): void

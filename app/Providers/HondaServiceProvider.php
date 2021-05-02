@@ -52,7 +52,7 @@ class HondaServiceProvider extends ServiceProvider
     {
         BladeHelper::directive('setting', fn ($key) => app('settings')->get($key));
         BladeHelper::directive('markdown', fn ($markdown) => Markdown::parse($markdown));
-               Blade::directive('alpine', function (string $variables) {
+        Blade::directive('alpine', function (string $variables) {
             return <<<DIRECTIVE
                 <?php
                     \$data = array_combine(

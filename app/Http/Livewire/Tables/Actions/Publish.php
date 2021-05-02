@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Livewire\Tables\Actions;
-
 
 use Honda\Table\Action;
 use Illuminate\Database\Eloquent\Model;

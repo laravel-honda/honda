@@ -17,6 +17,7 @@ trait AddsIngredient
 
         if (!$ingredient) {
             $this->reset('ingredient');
+
             return $this->refresh();
         }
 

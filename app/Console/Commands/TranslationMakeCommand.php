@@ -13,10 +13,11 @@ class TranslationMakeCommand extends Command
     /** @var string */
     protected $description = 'Creates a translation file.';
 
-    public function handle()
+    public function handle(): void
     {
         if ($this->option('all')) {
-            return $this->createTranslation($this->argument('name'), $this->option('lang'));
+            $this->createTranslation($this->argument('name'), $this->option('lang'));
+            return;
         }
 
         collect(File::directories(resource_path('lang')))->each(function (string $directory) {

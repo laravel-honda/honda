@@ -7,7 +7,9 @@ use Illuminate\Console\Command;
 
 class SetEnvCommand extends Command
 {
+    /** @var string */
     protected $signature   = 'env:set {key} {value}';
+    /** @var string */
     protected $description = 'Sets a value in the .env';
 
     public function handle(): void

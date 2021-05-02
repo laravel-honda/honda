@@ -50,12 +50,6 @@ return [
             'endpoint' => env('AWS_ENDPOINT'),
         ],
 
-        'test' => [
-            'driver'     => 'local',
-            'visibility' => 'private',
-            'root'       => 'urmoom/hyes',
-        ],
-
         /* @disks */
     ],
 

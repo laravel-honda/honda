@@ -2,8 +2,6 @@
 
 namespace App\Providers;
 
-use Honda\Navigation\Item;
-use Honda\Navigation\Navigation;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

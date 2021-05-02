@@ -17,10 +17,10 @@
     <meta http-equiv="refresh" content="{{ config('session.lifetime') * 60 }}">
     @livewireStyles
     <x-assets-style href="css/app.css"/>
-    <x-assets-script href="js/app.js"/>
+    <x-assets-script src="js/app.js"/>
     <x-assets-resources/>
 </head>
-<body {{ $attributes->merge(['class' => "bg-gray-100 font-medium"])}}>
+<body {{ $attributes }}>
 {{ $slot }}
 @livewireScripts
 </body>

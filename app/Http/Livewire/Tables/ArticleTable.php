@@ -7,7 +7,6 @@ use Honda\Table\Actions\Delete;
 use Honda\Table\Actions\Edit;
 use Honda\Table\Column;
 use Honda\Table\Components\Table;
-use Illuminate\Database\Eloquent\Model;
 
 class ArticleTable extends Table
 {

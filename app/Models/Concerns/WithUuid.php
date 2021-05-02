@@ -4,9 +4,9 @@ namespace App\Models\Concerns;
 
 use Str;
 
-trait HasUuidIdentifier
+trait WithUuid
 {
-    protected static function bootHasUuidIdentifier(): void
+    protected static function bootWithUuid(): void
     {
         static::creating(function ($model) {
             if (!$model->getKey()) {

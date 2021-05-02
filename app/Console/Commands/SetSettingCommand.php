@@ -7,7 +7,9 @@ use Spatie\Valuestore\Valuestore;
 
 class SetSettingCommand extends Command
 {
+    /** @var string */
     protected $signature   = 'settings:set {key} {value}';
+    /** @var string */
     protected $description = 'Sets a global setting.';
 
     public function handle(): void

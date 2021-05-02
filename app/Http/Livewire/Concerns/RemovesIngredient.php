@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Http\Livewire\Concerns;
-
 
 use App\Http\Livewire\EditArticle;
 use App\Models\Ingredient;

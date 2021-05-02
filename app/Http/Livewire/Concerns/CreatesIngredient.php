@@ -13,7 +13,6 @@ trait CreatesIngredient
     public $contains_gluten;
     public $contains_lactose;
 
-
     public function createIngredient()
     {
         Ingredient::create([
