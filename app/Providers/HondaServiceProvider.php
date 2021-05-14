@@ -20,38 +20,20 @@ class HondaServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->app->bind(Valuestore::class, fn () => Valuestore::make(storage_path('app/settings.json')));
-        $this->app->bind('settings', fn () => app(Valuestore::class));
+        $this->app->bind(Valuestore::class, fn() => Valuestore::make(storage_path('app/settings.json')));
+        $this->app->bind('settings', fn() => app(Valuestore::class));
 
         View::share(['settings' => app('settings')]);
-
-        ComponentAttributeBag::macro('hasAnyOf', function (...$attributes) {
-            /** @var ComponentAttributeBag $this */
-            return count(
-                    $this->filter(fn ($_, $attribute) => in_array($attribute, $attributes))->getAttributes()
-                ) > 0;
-        });
     }
 
     public function register(): void
     {
         Model::unguard();
-        Factory::guessFactoryNamesUsing(fn (string $model) => 'Database\\Factories\\' . class_basename($model) . 'Factory');
-
-        $this->registerMacros();
-        $this->registerBladeDirectives();
-    }
-
-    private function registerMacros(): void
-    {
+        Factory::guessFactoryNamesUsing(fn(string $model) => 'Database\\Factories\\' . class_basename($model) . 'Factory');
         Collection::mixin(new CollectionMixin());
         Str::mixin(new StrMixin());
-    }
-
-    public function registerBladeDirectives(): void
-    {
-        BladeHelper::directive('setting', fn ($key) => app('settings')->get($key));
-        BladeHelper::directive('markdown', fn ($markdown) => Markdown::parse($markdown));
+        BladeHelper::directive('setting', fn($key) => app('settings')->get($key));
+        BladeHelper::directive('markdown', fn($markdown) => Markdown::parse($markdown));
         Blade::directive('alpine', function (string $variables) {
             return <<<DIRECTIVE
                 <?php

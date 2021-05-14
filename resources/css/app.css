@@ -9,7 +9,3 @@
 }
 
 @tailwind utilities;
-
-[x-cloak] {
-    display: none;
-}

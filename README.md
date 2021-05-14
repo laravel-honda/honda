@@ -1,3 +1,0 @@
-* images
-* tags
-* catégorie

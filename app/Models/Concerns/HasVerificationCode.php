@@ -2,6 +2,8 @@
 
 namespace App\Models\Concerns;
 
+use App\Notifications\VerifyMail;
+
 trait HasVerificationCode
 {
     public function sendEmailVerificationNotification()
@@ -22,7 +24,7 @@ trait HasVerificationCode
         $code = '';
 
         for (; $length > 0; $length--) {
-            $code .= (string) random_int(1, 9);
+            $code .= random_int(1, 9);
         }
 
         return (int) $code;

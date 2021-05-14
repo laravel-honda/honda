@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\Settings;
 
 use Illuminate\Console\Command;
 use Spatie\Valuestore\Valuestore;

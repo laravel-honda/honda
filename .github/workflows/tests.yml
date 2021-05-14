@@ -12,7 +12,7 @@ jobs:
     strategy:
       matrix:
         operating-system: [ubuntu-latest]
-        php-versions: [ '7.4' ]
+        php-versions: [ '8.0' ]
         dependency-stability: [ prefer-stable ]
 
     name: PHP ${{ matrix.php-versions }} - Laravel ${{ matrix.laravel }} - ${{ matrix.dependency-stability }} - ${{ matrix.operating-system}}

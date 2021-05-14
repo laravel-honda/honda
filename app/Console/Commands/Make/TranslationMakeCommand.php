@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\Make;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -17,6 +17,7 @@ class TranslationMakeCommand extends Command
     {
         if ($this->option('all')) {
             $this->createTranslation($this->argument('name'), $this->option('lang'));
+
             return;
         }
 

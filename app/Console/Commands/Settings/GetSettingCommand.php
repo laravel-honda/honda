@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Console\Commands;
+namespace App\Console\Commands\Settings;
 
 use Illuminate\Console\Command;
 use Spatie\Valuestore\Valuestore;
@@ -8,7 +8,7 @@ use Spatie\Valuestore\Valuestore;
 class GetSettingCommand extends Command
 {
     /** @var string */
-    protected $signature   = 'settings:get {key}';
+    protected $signature = 'settings:get {key}';
     /** @var string */
     protected $description = 'Gets the value of a global setting';
 

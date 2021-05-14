@@ -2,6 +2,7 @@
 
 namespace App\Support\Mixins;
 
+use Closure;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\File;
 
@@ -28,12 +29,18 @@ class CollectionMixin
         };
     }
 
-    public function mapWithoutKeys(): callable
+    public function any(): Closure
     {
-        return function (callable $callable) {
-            return $this->map(function ($value) use ($callable) {
-                return $callable($value);
-            });
+        return function (callable $truthTest) {
+            return any($this->toArray(), $truthTest);
         };
     }
+
+    public function every(): Closure
+    {
+        return function (callable $truthTest) {
+            return every($this->toArray(), $truthTest);
+        };
+    }
+
 }
