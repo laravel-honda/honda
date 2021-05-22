@@ -19,14 +19,14 @@ class HondaServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->app->bind(Valuestore::class, fn () => Valuestore::make(storage_path('app/settings.json')));
-        $this->app->bind('settings', fn () => app(Valuestore::class));
-
-        View::share(['settings' => app('settings')]);
     }
 
     public function register(): void
     {
+        $this->app->bind(Valuestore::class, fn () => Valuestore::make(storage_path('app/settings.json')));
+        $this->app->bind('settings', fn () => app(Valuestore::class));
+        View::share(['settings' => app('settings')]);
+
         Model::unguard();
         Factory::guessFactoryNamesUsing(fn (string $model) => 'Database\\Factories\\' . class_basename($model) . 'Factory');
         Collection::mixin(new CollectionMixin());
@@ -53,6 +53,8 @@ class HondaServiceProvider extends ServiceProvider
                     if (str_ends_with(\$replaced, '}')) {
                         \$replaced = substr(\$replaced, 0, -1);
                     }
+
+                    echo \$replaced;
                 ?>
 DIRECTIVE;
         });
