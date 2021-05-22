@@ -9,7 +9,7 @@
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "honda/navigation": "^0.1.0",
+        "honda/navigation": "^0.3.0",
         "honda/pushed-resources": "^1.1.0",
         "honda/ui": "9999999-dev",
         "imliam/laravel-blade-helper": "^1.0",
