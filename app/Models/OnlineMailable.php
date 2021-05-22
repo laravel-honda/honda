@@ -37,7 +37,7 @@ class OnlineMailable extends Model
 
     public function getSignedUrl(): string
     {
-        return \URL::temporarySignedRoute('view-email-online', Carbon::parse($this->expires_at), [
+        return \URL::temporarySignedRoute('honda.mails.show', Carbon::parse($this->expires_at), [
             'onlineMailable' => $this,
         ]);
     }
