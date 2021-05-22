@@ -5,17 +5,18 @@
     "type": "project",
     "require": {
         "php": "^8",
+        "ext-dom": "*",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "honda/navigation": "^0.1.0",
         "honda/pushed-resources": "^1.1.0",
+        "honda/ui": "9999999-dev",
         "imliam/laravel-blade-helper": "^1.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.3",
-        "spatie/valuestore": "^1.2.5",
-        "ext-dom": "*"
+        "spatie/valuestore": "^1.2.5"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.5",
