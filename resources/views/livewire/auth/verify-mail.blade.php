@@ -1,7 +1,11 @@
 <div x-data="{}" class="flex flex-col items-center justify-center mt-6 sm:mt-24">
     <div class="max-w-lg">
-        <x-ui-title :content="__('auth.verify-email.title')" class="text-center" level="h1"/>
-        <x-ui-paragraph :content="__('auth.verify-email.details')" class="text-center mt-2"/>
+        <x-ui-title class="text-center" level="h1">
+            {{ __('auth.verify-email.title') }}
+        </x-ui-title>
+        <x-ui-paragraph class="text-center mt-2">
+            {{ __('auth.verify-email.details') }}
+        </x-ui-paragraph>
     </div>
 
     <form wire:submit.prevent="checkForVerification(Object.fromEntries(new FormData($event.target)))"
@@ -14,13 +18,14 @@
             </p>
         @enderror
         <div class="flex items-center mt-6">
-            <x-ui-button content="Verify"/>
-            <span content="Resend"
+            <x-ui-button color="{{ settings('color') }}">
+                {{ __('auth.verify-email.verify') }}
+            </x-ui-button>
+            <span
                   class="inline-block ml-4 text-{{ settings('color') }}-500 font-semibold cursor-pointer"
                   @click="$event.target.innerText = '{{ __('auth.verify-email.sent') }}'; $wire.sendVerificationMail()">
             {{ __('auth.verify-email.resend') }}
         </span>
         </div>
     </form>
-
 </div>
