@@ -1,8 +1,6 @@
 <?php
 
-
 namespace App\Support\Tinker;
-
 
 use Illuminate\Support\Collection;
 use ReflectionClass;

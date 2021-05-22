@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use App\Models\Concerns\HasUuidIdentifier;
 use App\Models\Concerns\WithUuid;
 use Carbon\Carbon;
 use Eloquent;
@@ -12,11 +11,12 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * App\Models\OnlineMailable.
  *
- * @property string $id
- * @property mixed|null $content
- * @property string|null $expires_at
+ * @property string                          $id
+ * @property mixed|null                      $content
+ * @property string|null                     $expires_at
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static Builder|OnlineMailable newModelQuery()
  * @method static Builder|OnlineMailable newQuery()
  * @method static Builder|OnlineMailable query()

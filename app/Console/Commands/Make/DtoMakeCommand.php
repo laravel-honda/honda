@@ -5,7 +5,7 @@ namespace App\Console\Commands\Make;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 
-class TranslationMakeCommand extends Command
+class DtoMakeCommand extends Command
 {
     /** @var string */
     protected $signature = 'make:dto {name}';

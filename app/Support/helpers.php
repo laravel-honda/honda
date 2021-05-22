@@ -3,7 +3,7 @@
 use Spatie\Valuestore\Valuestore;
 
 if (!function_exists('settings')) {
-    function settings(string $key = null): Valuestore|string|int|float|bool|array
+    function settings(string $key = null): Valuestore | string | int | float | bool | array
     {
         if ($key) {
             return app('settings')->get($key);
@@ -21,6 +21,7 @@ if (!function_exists('any')) {
                 return true;
             }
         }
+
         return false;
     }
 }
@@ -33,6 +34,7 @@ if (!function_exists('every')) {
                 return false;
             }
         }
+
         return true;
     }
 }

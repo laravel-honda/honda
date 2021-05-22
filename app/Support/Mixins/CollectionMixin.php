@@ -42,5 +42,4 @@ class CollectionMixin
             return every($this->toArray(), $truthTest);
         };
     }
-
 }

@@ -1,21 +1,16 @@
 <?php
 
-
 namespace App\Support\DTO;
-
 
 use ArrayAccess;
 use ArrayIterator;
 use Countable;
-use Exception;
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Http\Request;
 use IteratorAggregate;
 use ReflectionClass;
 use ReflectionProperty;
-use Serializable;
-use Traversable;
 
 class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggregate
 {
@@ -32,7 +27,7 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
     public static function fromRequest(Request $request): DTO
     {
         $properties = static::getProperties();
-        $dto = new static();
+        $dto        = new static();
 
         foreach ($properties as $property) {
             if ($request->has($property->getName())) {
@@ -49,16 +44,17 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
             return self::$propertiesCache[static::class];
         }
 
-        $properties = (new ReflectionClass(static::class))->getProperties(ReflectionProperty::IS_PUBLIC);
+        $properties                           = (new ReflectionClass(static::class))->getProperties(ReflectionProperty::IS_PUBLIC);
         self::$propertiesCache[static::class] = $properties;
+
         return $properties;
     }
 
     public function fill(DTO $dto): static
     {
         $original = $this->toArray();
-        $new = $dto->toArray();
-        $merged = $original;
+        $new      = $dto->toArray();
+        $merged   = $original;
 
         foreach ($new as $key => $value) {
             if (empty($key) && !empty($original[$key])) {
@@ -74,7 +70,7 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
     public function toArray(): array
     {
         $properties = self::getProperties();
-        $array = [];
+        $array      = [];
 
         foreach ($properties as $property) {
             if ($property->isInitialized($this) || $property->hasDefaultValue()) {
@@ -82,7 +78,7 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
             } else {
                 $array[$property->getName()] = match ($property->getType()->getName()) {
                     'string' => '',
-                    default => null
+                    default  => null
                 };
             }
         }
@@ -93,8 +89,8 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
     public function forceFill(DTO $dto): DTO
     {
         $original = $this->toArray();
-        $new = $dto->toArray();
-        $merged = $original;
+        $new      = $dto->toArray();
+        $merged   = $original;
 
         foreach ($new as $key => $value) {
             $merged[$key] = $value;
@@ -132,7 +128,7 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
     {
         return new static(array_filter(
             $this->toArray(),
-            static fn($property) => in_array($property, $properties),
+            static fn ($property) => in_array($property, $properties),
             ARRAY_FILTER_USE_KEY
         ));
     }
@@ -141,10 +137,9 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
     {
         return new static(array_filter(
             $this->toArray(),
-            static fn($property) => !in_array($property, $properties),
+            static fn ($property) => !in_array($property, $properties),
             ARRAY_FILTER_USE_KEY
         ));
-
     }
 
     public function count(): int
@@ -152,7 +147,7 @@ class DTO implements Jsonable, Arrayable, ArrayAccess, Countable, IteratorAggreg
         return count($this->toArray());
     }
 
-    public function toJson($options = 0): bool|string
+    public function toJson($options = 0): bool | string
     {
         return json_encode($this->toArray(), JSON_THROW_ON_ERROR | $options);
     }

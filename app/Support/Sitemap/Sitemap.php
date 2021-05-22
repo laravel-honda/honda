@@ -1,36 +1,35 @@
 <?php
 
-
 namespace App\Support\Sitemap;
 
 use Carbon\Carbon;
-use DOMDocument;
 use Honda\UrlResolver\UrlResolver;
 use Illuminate\Contracts\Support\Responsable;
 use JetBrains\PhpStorm\Pure;
 
 class Sitemap implements Responsable
 {
-    public const CHANGE_FREQUENCY_ALWAYS = 'always';
-    public const CHANGE_FREQUENCY_HOURLY = 'hourly';
-    public const CHANGE_FREQUENCY_DAILY = 'daily';
-    public const CHANGE_FREQUENCY_WEEKLY = 'weekly';
+    public const CHANGE_FREQUENCY_ALWAYS  = 'always';
+    public const CHANGE_FREQUENCY_HOURLY  = 'hourly';
+    public const CHANGE_FREQUENCY_DAILY   = 'daily';
+    public const CHANGE_FREQUENCY_WEEKLY  = 'weekly';
     public const CHANGE_FREQUENCY_MONTHLY = 'monthly';
-    public const CHANGE_FREQUENCY_YEARLY = 'yearly';
-    public const CHANGE_FREQUENCY_NEVER = 'never';
+    public const CHANGE_FREQUENCY_YEARLY  = 'yearly';
+    public const CHANGE_FREQUENCY_NEVER   = 'never';
 
     /** @var Set[] */
     protected array $set = [];
 
-
-    #[Pure] public static function create(): self
-    {
-        return new self();
-    }
+    #[Pure]
+ public static function create(): self
+ {
+     return new self();
+ }
 
     public function add(string $url)
     {
         $this->set[] = new Set($url);
+
         return $this;
     }
 
@@ -63,7 +62,7 @@ class Sitemap implements Responsable
     public function toResponse($request)
     {
         return response($this->toXML(), 200, [
-            'Content-Type' => 'text/xml'
+            'Content-Type' => 'text/xml',
         ]);
     }
 
@@ -86,7 +85,7 @@ class Sitemap implements Responsable
 
             $urls .= "<priority>{$set->priority}</priority>";
 
-            $urls .= "</url>";
+            $urls .= '</url>';
         }
 
         return "<?xml version=\"1.0\" encoding=\"UTF-8\" ?><urlset xmlns=\"http://www.sitemaps.org/schemas/sitemap/0.9\">$urls</urlset>";

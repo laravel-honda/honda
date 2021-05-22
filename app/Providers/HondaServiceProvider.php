@@ -11,7 +11,6 @@ use Illuminate\Mail\Markdown;
 use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use Illuminate\View\ComponentAttributeBag;
 use ImLiam\BladeHelper\Facades\BladeHelper;
 use Spatie\Valuestore\Valuestore;
 use View;
@@ -20,8 +19,8 @@ class HondaServiceProvider extends ServiceProvider
 {
     public function boot(): void
     {
-        $this->app->bind(Valuestore::class, fn() => Valuestore::make(storage_path('app/settings.json')));
-        $this->app->bind('settings', fn() => app(Valuestore::class));
+        $this->app->bind(Valuestore::class, fn () => Valuestore::make(storage_path('app/settings.json')));
+        $this->app->bind('settings', fn () => app(Valuestore::class));
 
         View::share(['settings' => app('settings')]);
     }
@@ -29,11 +28,11 @@ class HondaServiceProvider extends ServiceProvider
     public function register(): void
     {
         Model::unguard();
-        Factory::guessFactoryNamesUsing(fn(string $model) => 'Database\\Factories\\' . class_basename($model) . 'Factory');
+        Factory::guessFactoryNamesUsing(fn (string $model) => 'Database\\Factories\\' . class_basename($model) . 'Factory');
         Collection::mixin(new CollectionMixin());
         Str::mixin(new StrMixin());
-        BladeHelper::directive('setting', fn($key) => app('settings')->get($key));
-        BladeHelper::directive('markdown', fn($markdown) => Markdown::parse($markdown));
+        BladeHelper::directive('setting', fn ($key) => app('settings')->get($key));
+        BladeHelper::directive('markdown', fn ($markdown) => Markdown::parse($markdown));
         Blade::directive('alpine', function (string $variables) {
             return <<<DIRECTIVE
                 <?php
