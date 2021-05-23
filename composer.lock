@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1382e4e8f4dbf8c7f82d439f5367a1bd",
+    "content-hash": "0e943053de83943290df69f3f01fb5c4",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -981,16 +981,16 @@
         },
         {
             "name": "honda/navigation",
-            "version": "0.1.0",
+            "version": "0.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel-honda/navigation.git",
-                "reference": "89441aa0cc004e0b5bb5790c65ff6551f2a1ffb9"
+                "reference": "4cab2f1e4622fafa1422b4f3ce987289b6472652"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel-honda/navigation/zipball/89441aa0cc004e0b5bb5790c65ff6551f2a1ffb9",
-                "reference": "89441aa0cc004e0b5bb5790c65ff6551f2a1ffb9",
+                "url": "https://api.github.com/repos/laravel-honda/navigation/zipball/4cab2f1e4622fafa1422b4f3ce987289b6472652",
+                "reference": "4cab2f1e4622fafa1422b4f3ce987289b6472652",
                 "shasum": ""
             },
             "require": {
@@ -1038,9 +1038,9 @@
             ],
             "support": {
                 "issues": "https://github.com/laravel-honda/navigation/issues",
-                "source": "https://github.com/laravel-honda/navigation/tree/0.1.0"
+                "source": "https://github.com/laravel-honda/navigation/tree/0.3.0"
             },
-            "time": "2021-05-14T10:07:13+00:00"
+            "time": "2021-05-19T09:52:27+00:00"
         },
         {
             "name": "honda/pushed-resources",
