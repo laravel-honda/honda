@@ -8,11 +8,8 @@ use Illuminate\Notifications\Notification;
 
 class VerifyMail extends Notification
 {
-    private int $code;
-
-    public function __construct(int $code)
+    public function __construct(protected int $code)
     {
-        $this->code = $code;
     }
 
     public function via(): array

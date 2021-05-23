@@ -13,17 +13,13 @@ class SetLocale
 
     public function handle(Request $request, Closure $next)
     {
-        if (($lang = $request->get('hl')) && (in_array($lang, static::ALLOWED_LANGUAGES) || static::ALLOWED_LANGUAGES === ['*'])) {
-            App::setLocale($lang);
+        $lang = $request->get('hl', $this->parseHttpLocale($request));
 
+        if (static::ALLOWED_LANGUAGES !== ['*'] && !in_array($lang, static::ALLOWED_LANGUAGES)) {
             return $next($request);
         }
 
-        if (($lang = $this->parseHttpLocale($request)) && (in_array($lang, static::ALLOWED_LANGUAGES) || static::ALLOWED_LANGUAGES === ['*'])) {
-            App::setLocale($lang);
-
-            return $next($request);
-        }
+        App::setLocale($lang);
 
         return $next($request);
     }
@@ -46,9 +42,7 @@ class SetLocale
             }
 
             return $mapping;
-        })->sortByDesc(function ($locale) {
-            return $locale['factor'];
-        });
+        })->sortByDesc(fn ($locale) => $locale['factor']);
 
         return explode('-', $locales->first()['locale'])[0];
     }

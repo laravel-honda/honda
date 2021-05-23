@@ -17,10 +17,6 @@ use View;
 
 class HondaServiceProvider extends ServiceProvider
 {
-    public function boot(): void
-    {
-    }
-
     public function register(): void
     {
         $this->app->bind(Valuestore::class, fn () => Valuestore::make(storage_path('app/settings.json')));

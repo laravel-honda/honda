@@ -78,5 +78,10 @@ return [
         ],
 
         'button' => 'Confirm my password'
+    ],
+
+    'logout' => [
+        'title' => 'Are you sure you want to sign out?',
+        'button' => 'Sign out'
     ]
 ];

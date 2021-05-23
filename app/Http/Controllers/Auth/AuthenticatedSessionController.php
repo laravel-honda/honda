@@ -5,28 +5,18 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Providers\RouteServiceProvider;
 use Auth;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
-use Illuminate\View\View;
 
 class AuthenticatedSessionController
 {
-    /**
-     * Display the login view.
-     *
-     * @return \Illuminate\Contracts\View\Factory|View
-     */
-    public function create()
+    public function create(): View
     {
         return view('auth.login');
     }
 
-    /**
-     * Handle an incoming authentication request.
-     *
-     * @return RedirectResponse
-     */
-    public function store(LoginRequest $request)
+    public function store(LoginRequest $request): RedirectResponse
     {
         $request->authenticate();
 
@@ -35,12 +25,12 @@ class AuthenticatedSessionController
         return redirect(RouteServiceProvider::HOME);
     }
 
-    /**
-     * Destroy an authenticated session.
-     *
-     * @return RedirectResponse
-     */
-    public function destroy(Request $request)
+    public function delete(): View
+    {
+        return view('auth.logout');
+    }
+
+    public function destroy(Request $request): RedirectResponse
     {
         Auth::guard('web')->logout();
 

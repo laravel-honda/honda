@@ -14,4 +14,7 @@ parameters:
     - ./app/Http/Controllers/Translations/TranslationsController.php
     - ./app/Console/Commands/SyncTranslationsCommand.php
 
+  ignoreErrors:
+    - '#Unsafe usage of new static#'
+
   checkMissingIterableValueType: false

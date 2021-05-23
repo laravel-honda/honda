@@ -6,7 +6,7 @@ use App\Notifications\VerifyMail;
 
 trait HasVerificationCode
 {
-    public function sendEmailVerificationNotification()
+    public function sendEmailVerificationNotification(): void
     {
         $code = $this->email_verification_code;
 
@@ -19,19 +19,14 @@ trait HasVerificationCode
         $this->notify(new VerifyMail($code));
     }
 
-    private function generateSecretCode(int $length): int
+    protected function generateSecretCode(int $length): int
     {
         $code = '';
 
         for (; $length > 0; $length--) {
-            $code .= random_int(1, 9);
+            $code .= random_int($code !== '' ? 0 : 1, 9);
         }
 
         return (int) $code;
-    }
-
-    public function checkEmailVerificationCode(int $code): bool
-    {
-        return $this->email_verification_code === $code;
     }
 }

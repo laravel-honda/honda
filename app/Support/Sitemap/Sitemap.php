@@ -5,7 +5,6 @@ namespace App\Support\Sitemap;
 use Carbon\Carbon;
 use Honda\UrlResolver\UrlResolver;
 use Illuminate\Contracts\Support\Responsable;
-use JetBrains\PhpStorm\Pure;
 
 class Sitemap implements Responsable
 {
@@ -20,11 +19,10 @@ class Sitemap implements Responsable
     /** @var Set[] */
     protected array $set = [];
 
-    #[Pure]
- public static function create(): self
- {
-     return new self();
- }
+    public static function create(): self
+    {
+        return new self();
+    }
 
     public function add(string $url)
     {

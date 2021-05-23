@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0e943053de83943290df69f3f01fb5c4",
+    "content-hash": "a46643aa9b3a8d2dcf556b0093234a97",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -500,16 +500,16 @@
         },
         {
             "name": "felixdorn/laravel-render-blade-string",
-            "version": "1.0.0",
+            "version": "1.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/felixdorn/laravel-render-blade-string.git",
-                "reference": "2f4a2f91ffe2d4730fb55a0ad8f626c2acfcdc19"
+                "reference": "ca878dc71cce6b799547ac8f8d745777dad09beb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/felixdorn/laravel-render-blade-string/zipball/2f4a2f91ffe2d4730fb55a0ad8f626c2acfcdc19",
-                "reference": "2f4a2f91ffe2d4730fb55a0ad8f626c2acfcdc19",
+                "url": "https://api.github.com/repos/felixdorn/laravel-render-blade-string/zipball/ca878dc71cce6b799547ac8f8d745777dad09beb",
+                "reference": "ca878dc71cce6b799547ac8f8d745777dad09beb",
                 "shasum": ""
             },
             "require": {
@@ -541,9 +541,9 @@
             "description": "A function that can render Blade on the fly. ",
             "support": {
                 "issues": "https://github.com/felixdorn/laravel-render-blade-string/issues",
-                "source": "https://github.com/felixdorn/laravel-render-blade-string/tree/1.0.0"
+                "source": "https://github.com/felixdorn/laravel-render-blade-string/tree/1.1.0"
             },
-            "time": "2021-05-07T09:53:23+00:00"
+            "time": "2021-05-16T09:44:10+00:00"
         },
         {
             "name": "fideloper/proxy",
@@ -6273,16 +6273,16 @@
         },
         {
             "name": "doctrine/annotations",
-            "version": "1.13.0",
+            "version": "1.13.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/annotations.git",
-                "reference": "03cb2123a67d4be806554fe670d0adc298199808"
+                "reference": "e6e7b7d5b45a2f2abc5460cc6396480b2b1d321f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/annotations/zipball/03cb2123a67d4be806554fe670d0adc298199808",
-                "reference": "03cb2123a67d4be806554fe670d0adc298199808",
+                "url": "https://api.github.com/repos/doctrine/annotations/zipball/e6e7b7d5b45a2f2abc5460cc6396480b2b1d321f",
+                "reference": "e6e7b7d5b45a2f2abc5460cc6396480b2b1d321f",
                 "shasum": ""
             },
             "require": {
@@ -6295,7 +6295,7 @@
                 "doctrine/cache": "^1.11 || ^2.0",
                 "doctrine/coding-standard": "^6.0 || ^8.1",
                 "phpstan/phpstan": "^0.12.20",
-                "phpunit/phpunit": "^7.5 || ^9.1.5",
+                "phpunit/phpunit": "^7.5 || ^8.0 || ^9.1.5",
                 "symfony/cache": "^4.4 || ^5.2"
             },
             "type": "library",
@@ -6339,46 +6339,45 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/annotations/issues",
-                "source": "https://github.com/doctrine/annotations/tree/1.13.0"
+                "source": "https://github.com/doctrine/annotations/tree/1.13.1"
             },
-            "time": "2021-04-29T07:39:39+00:00"
+            "time": "2021-05-16T18:07:53+00:00"
         },
         {
             "name": "doctrine/cache",
-            "version": "1.10.2",
+            "version": "1.11.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/cache.git",
-                "reference": "13e3381b25847283a91948d04640543941309727"
+                "reference": "9c53086695937c50c47936ed86d96150ffbcf60d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/cache/zipball/13e3381b25847283a91948d04640543941309727",
-                "reference": "13e3381b25847283a91948d04640543941309727",
+                "url": "https://api.github.com/repos/doctrine/cache/zipball/9c53086695937c50c47936ed86d96150ffbcf60d",
+                "reference": "9c53086695937c50c47936ed86d96150ffbcf60d",
                 "shasum": ""
             },
             "require": {
                 "php": "~7.1 || ^8.0"
             },
             "conflict": {
-                "doctrine/common": ">2.2,<2.4"
+                "doctrine/common": ">2.2,<2.4",
+                "psr/cache": ">=3"
             },
             "require-dev": {
                 "alcaeus/mongo-php-adapter": "^1.1",
-                "doctrine/coding-standard": "^6.0",
+                "cache/integration-tests": "dev-master",
+                "doctrine/coding-standard": "^8.0",
                 "mongodb/mongodb": "^1.1",
-                "phpunit/phpunit": "^7.0",
-                "predis/predis": "~1.0"
+                "phpunit/phpunit": "^7.0 || ^8.0 || ^9.0",
+                "predis/predis": "~1.0",
+                "psr/cache": "^1.0 || ^2.0",
+                "symfony/cache": "^4.4 || ^5.2"
             },
             "suggest": {
                 "alcaeus/mongo-php-adapter": "Required to use legacy MongoDB driver"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.9.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Doctrine\\Common\\Cache\\": "lib/Doctrine/Common/Cache"
@@ -6425,7 +6424,7 @@
             ],
             "support": {
                 "issues": "https://github.com/doctrine/cache/issues",
-                "source": "https://github.com/doctrine/cache/tree/1.10.x"
+                "source": "https://github.com/doctrine/cache/tree/1.11.2"
             },
             "funding": [
                 {
@@ -6441,7 +6440,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-07-07T18:54:01+00:00"
+            "time": "2021-05-20T14:57:29+00:00"
         },
         {
             "name": "doctrine/dbal",
@@ -9007,16 +9006,16 @@
         },
         {
             "name": "psr/cache",
-            "version": "3.0.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-fig/cache.git",
-                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf"
+                "reference": "213f9dbc5b9bfbc4f8db86d2838dc968752ce13b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-fig/cache/zipball/aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
-                "reference": "aa5030cfa5405eccfdcb1083ce040c2cb8d253bf",
+                "url": "https://api.github.com/repos/php-fig/cache/zipball/213f9dbc5b9bfbc4f8db86d2838dc968752ce13b",
+                "reference": "213f9dbc5b9bfbc4f8db86d2838dc968752ce13b",
                 "shasum": ""
             },
             "require": {
@@ -9050,9 +9049,9 @@
                 "psr-6"
             ],
             "support": {
-                "source": "https://github.com/php-fig/cache/tree/3.0.0"
+                "source": "https://github.com/php-fig/cache/tree/2.0.0"
             },
-            "time": "2021-02-03T23:26:27+00:00"
+            "time": "2021-02-03T23:23:37+00:00"
         },
         {
             "name": "react/promise",
@@ -9110,12 +9109,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/SecurityAdvisories.git",
-                "reference": "5ffdb87f627ff16cc392e30515a1fe069cddc3e2"
+                "reference": "b690895fa1530e85397d5070517e45e098be6d18"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/5ffdb87f627ff16cc392e30515a1fe069cddc3e2",
-                "reference": "5ffdb87f627ff16cc392e30515a1fe069cddc3e2",
+                "url": "https://api.github.com/repos/Roave/SecurityAdvisories/zipball/b690895fa1530e85397d5070517e45e098be6d18",
+                "reference": "b690895fa1530e85397d5070517e45e098be6d18",
                 "shasum": ""
             },
             "conflict": {
@@ -9223,7 +9222,7 @@
                 "laravel/framework": "<6.20.26|>=7,<8.40",
                 "laravel/socialite": ">=1,<1.0.99|>=2,<2.0.10",
                 "league/commonmark": "<0.18.3",
-                "lexik/jwt-authentication-bundle": ">=2,<2.10.7|>=2.11,<2.11.3",
+                "lexik/jwt-authentication-bundle": "<2.10.7|>=2.11,<2.11.3",
                 "librenms/librenms": "<21.1",
                 "livewire/livewire": ">2.2.4,<2.2.6",
                 "magento/community-edition": ">=2,<2.2.10|>=2.3,<2.3.3",
@@ -9299,7 +9298,7 @@
                 "shopware/core": "<=6.3.5.2",
                 "shopware/platform": "<=6.3.5.2",
                 "shopware/production": "<=6.3.5.2",
-                "shopware/shopware": "<5.6.9",
+                "shopware/shopware": "<=5.6.9",
                 "silverstripe/admin": ">=1.0.3,<1.0.4|>=1.1,<1.1.1",
                 "silverstripe/assets": ">=1,<1.4.7|>=1.5,<1.5.2",
                 "silverstripe/cms": "<4.3.6|>=4.4,<4.4.4",
@@ -9344,21 +9343,21 @@
                 "symfony/http-foundation": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.3.8|>=4.4,<4.4.7|>=5,<5.0.7",
                 "symfony/http-kernel": ">=2,<2.8.52|>=3,<3.4.35|>=4,<4.2.12|>=4.3,<4.4.13|>=5,<5.1.5",
                 "symfony/intl": ">=2.7,<2.7.38|>=2.8,<2.8.31|>=3,<3.2.14|>=3.3,<3.3.13",
-                "symfony/maker-bundle": ">=1.27,<1.31.1",
+                "symfony/maker-bundle": ">=1.27,<1.29.2|>=1.30,<1.31.1",
                 "symfony/mime": ">=4.3,<4.3.8",
                 "symfony/phpunit-bridge": ">=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/polyfill": ">=1,<1.10",
                 "symfony/polyfill-php55": ">=1,<1.10",
                 "symfony/proxy-manager-bridge": ">=2.7,<2.7.51|>=2.8,<2.8.50|>=3,<3.4.26|>=4,<4.1.12|>=4.2,<4.2.7",
                 "symfony/routing": ">=2,<2.0.19",
-                "symfony/security": ">=2,<2.7.51|>=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
+                "symfony/security": ">=2,<2.7.51|>=2.8,<3.4.49|>=4,<4.4.24|>=5,<5.2.8",
                 "symfony/security-bundle": ">=2,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
-                "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
+                "symfony/security-core": ">=2.4,<2.6.13|>=2.7,<2.7.9|>=2.7.30,<2.7.32|>=2.8,<3.4.49|>=4,<4.4.24|>=5,<5.2.9",
                 "symfony/security-csrf": ">=2.4,<2.7.48|>=2.8,<2.8.41|>=3,<3.3.17|>=3.4,<3.4.11|>=4,<4.0.11",
                 "symfony/security-guard": ">=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
                 "symfony/security-http": ">=2.3,<2.3.41|>=2.4,<2.7.51|>=2.8,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
                 "symfony/serializer": ">=2,<2.0.11",
-                "symfony/symfony": ">=2,<3.4.48|>=4,<4.4.23|>=5,<5.2.8",
+                "symfony/symfony": ">=2,<3.4.49|>=4,<4.4.24|>=5,<5.2.9",
                 "symfony/translation": ">=2,<2.0.17",
                 "symfony/validator": ">=2,<2.0.24|>=2.1,<2.1.12|>=2.2,<2.2.5|>=2.3,<2.3.3",
                 "symfony/var-exporter": ">=4.2,<4.2.12|>=4.3,<4.3.8",
@@ -9388,6 +9387,7 @@
                 "wallabag/tcpdf": "<6.2.22",
                 "wikimedia/parsoid": "<0.12.2",
                 "willdurand/js-translation-bundle": "<2.1.1",
+                "wp-cli/wp-cli": "<2.5",
                 "yii2mod/yii2-cms": "<1.9.2",
                 "yiisoft/yii": ">=1.1.14,<1.1.15",
                 "yiisoft/yii2": "<2.0.38",
@@ -9397,6 +9397,7 @@
                 "yiisoft/yii2-gii": "<2.0.4",
                 "yiisoft/yii2-jui": "<2.0.4",
                 "yiisoft/yii2-redis": "<2.0.8",
+                "yoast-seo-for-typo3/yoast_seo": "<7.2.1",
                 "yourls/yourls": "<1.7.4",
                 "zendesk/zendesk_api_client_php": "<2.2.11",
                 "zendframework/zend-cache": ">=2.4,<2.4.8|>=2.5,<2.5.3",
@@ -9459,7 +9460,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-05-13T21:03:10+00:00"
+            "time": "2021-05-21T19:22:20+00:00"
         },
         {
             "name": "sebastian/cli-parser",

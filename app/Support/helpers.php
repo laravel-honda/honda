@@ -3,7 +3,7 @@
 use Spatie\Valuestore\Valuestore;
 
 if (!function_exists('settings')) {
-    function settings(string $key = null): Valuestore | string | int | float | bool | array
+    function settings(string $key = null): Valuestore | string | array
     {
         if ($key) {
             return app('settings')->get($key);

@@ -5,21 +5,14 @@ namespace App\Http\Controllers\Auth;
 use App\Models\User;
 use App\Providers\RouteServiceProvider;
 use Auth;
-use Hash;
 use Illuminate\Auth\Events\Registered;
-use Illuminate\Contracts\View\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 
 class RegisteredUserController
 {
-    /**
-     * Display the registration view.
-     *
-     * @return Factory|View
-     */
-    public function create()
+    public function create(): View
     {
         return view('auth.register');
     }
@@ -33,9 +26,9 @@ class RegisteredUserController
         ]);
 
         Auth::login($user = User::create([
-            'name'     => $request->name,
-            'email'    => $request->email,
-            'password' => Hash::make($request->password),
+            'name'     => $request->get('name'),
+            'email'    => $request->get('email'),
+            'password' => bcrypt($request->get('password')),
         ]));
 
         event(new Registered($user));

@@ -20,8 +20,4 @@ class EventServiceProvider extends ServiceProvider
             AppendUrlToMailable::class,
         ],
     ];
-
-    public function boot(): void
-    {
-    }
 }

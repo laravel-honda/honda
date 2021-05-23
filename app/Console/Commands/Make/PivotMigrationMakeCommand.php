@@ -19,11 +19,10 @@ class PivotMigrationMakeCommand extends GeneratorCommand
 
     /**
      * Get the first and second table name from input.
-     *
-     * @return string
      */
-    protected function getNameInput()
+    protected function getNameInput(): string
     {
+        return '';
     }
 
     protected function getPath($name = null): string
@@ -70,9 +69,7 @@ class PivotMigrationMakeCommand extends GeneratorCommand
 
     protected function replaceClass($stub, $name): string
     {
-        $stub = str_replace('{{class}}', $name, $stub);
-
-        return $stub;
+        return str_replace('{{class}}', $name, $stub);
     }
 
     protected function replaceSchema(string &$stub): self

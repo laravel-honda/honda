@@ -5,13 +5,12 @@
     "type": "project",
     "require": {
         "php": "^8",
-        "ext-dom": "*",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "honda/navigation": "^0.3.0",
         "honda/pushed-resources": "^1.1.0",
-        "honda/ui": "9999999-dev",
+        "honda/ui": "dev-master",
         "imliam/laravel-blade-helper": "^1.0",
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
@@ -68,11 +67,6 @@
             "@test:types",
             "@test:unit"
         ],
-        "helpers": [
-            "@php artisan ide-helper:generate",
-            "@php artisan ide-helper:meta",
-            "@php artisan ide-helper:eloquent",
-            "@php artisan ide-helper:models -Wr"
-        ]
+        "helpers": "@php artisan ide-helper:generate"
     }
 }

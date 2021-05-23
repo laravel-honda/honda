@@ -9,7 +9,7 @@ class AppendUrlToMailable
     public function handle(MessageSending $event): void
     {
         $event->message->setBody(
-            preg_replace('/(\<body .+>)/', '$1' . $this->getBanner($event), $event->message->getBody())
+            preg_replace('/(<body .+>)/', '$1' . $this->getBanner($event), $event->message->getBody())
         );
     }
 
