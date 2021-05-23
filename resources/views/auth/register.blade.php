@@ -13,8 +13,9 @@
             <x-ui-input color="{{ settings('color') }}" name="email" placeholder="jack.martin@mail.com" :label="__('auth.register.inputs.email')"/>
             <x-ui-password color="{{ settings('color') }}" name="password" :label="__('auth.register.inputs.password')"
                         placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/>
-            <x-ui-button color="{{ settings('color') }}" :content="__('auth.register.button')" class="w-full justify-center mt-6"/>
-
+            <x-ui-button color="{{ settings('color') }}" class="w-full justify-center mt-6">
+                {{ __('auth.register.button') }}
+            </x-ui-button>
             <x-ui-paragraph class="mt-4 text-center">
                 {{ __('auth.register.login')}}
                 <a href="{{ route('login') }}">
