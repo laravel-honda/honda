@@ -12,7 +12,7 @@
         <x-ui-form action="password.email" class="bg-white sm:shadow-lg sm:max-w-lg w-full rounded-lg p-6 mt-8">
             <x-ui-alert type="status" closeable />
             <x-ui-input color="{{ settings('color') }}" name="email" placeholder="jack.martin@mail.com" :label="__('auth.forgot-password.inputs.email')" :first="session('status') === null" />
-            <x-ui-button color="{{ settings('color') }}" class="mt-6 w-full">
+            <x-ui-button color="{{ settings('color') }}" class="mt-6 justify-center w-full">
                 {{ __('auth.forgot-password.button') }}
             </x-ui-button>
         </x-ui-form>

@@ -6,11 +6,11 @@
         </div>
         <x-ui-form action="login" class="bg-white sm:shadow-lg sm:max-w-lg w-full rounded-lg p-6 mt-8">
             <x-ui-input color="{{ settings('color') }}" name="email" placeholder="jack.martin@mail.com" :label="__('auth.login.inputs.email')" first/>
-            <x-ui-input color="{{ settings('color') }}" name="password" :label="__('auth.login.inputs.password')"/>
+            <x-ui-input color="{{ settings('color') }}" name="password" :label="__('auth.login.inputs.password')" placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;" />
             <div class="flex justify-between items-center mt-6">
                 <x-ui-checkbox color="{{ settings('color') }}" name="remember_me" :label="__('auth.login.remember_me')" first/>
                 <a href="{{ route('password.request') }}" class="font-semibold text-{{ settings('color') }}-500">
-                    {{ __('auth.login.forgot_password')}}       
+                    {{ __('auth.login.forgot_password')}}
                 </a>
             </div>
             <x-ui-button color="{{ settings('color') }}" class="w-full justify-center mt-6">

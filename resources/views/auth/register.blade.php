@@ -11,14 +11,14 @@
         <x-ui-form action="register" class="bg-white sm:shadow-lg sm:max-w-lg w-full rounded-lg p-6 mt-8">
             <x-ui-input color="{{ settings('color') }}" name="name" placeholder="Jack Martin" :label="__('auth.register.inputs.name')" first />
             <x-ui-input color="{{ settings('color') }}" name="email" placeholder="jack.martin@mail.com" :label="__('auth.register.inputs.email')"/>
-            <x-ui-password color="{{ settings('color') }}" name="password" :label="__('auth.register.inputs.password')"
+            <x-ui-input color="{{ settings('color') }}" name="password" :label="__('auth.register.inputs.password')"
                         placeholder="&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;"/>
             <x-ui-button color="{{ settings('color') }}" class="w-full justify-center mt-6">
                 {{ __('auth.register.button') }}
             </x-ui-button>
             <x-ui-paragraph class="mt-4 text-center">
                 {{ __('auth.register.login')}}
-                <a href="{{ route('login') }}">
+                <a class="font-semibold text-{{ settings('color') }}-500" href="{{ route('login') }}">
                     {{ __('auth.register.login_link') }}
                 </a>
             </x-ui-paragraph>
