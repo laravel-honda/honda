@@ -4,11 +4,11 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": "^8",
+        "php": "^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
-        "honda/navigation": "^0.3.0",
+        "honda/navigation": "^0.2.0",
         "honda/pushed-resources": "^1.1.0",
         "honda/ui": "dev-master",
         "imliam/laravel-blade-helper": "^1.0",
