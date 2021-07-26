@@ -7,9 +7,6 @@ use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use URL;
 
-/**
- * @mixin IdeHelperOnlineMailable
- */
 class OnlineMailable extends Model
 {
     use WithUuid;

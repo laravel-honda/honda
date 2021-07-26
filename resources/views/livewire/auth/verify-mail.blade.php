@@ -10,7 +10,7 @@
 
     <form wire:submit.prevent="checkForVerification(Object.fromEntries(new FormData($event.target)))"
           class="flex flex-col items-center my-4">
-        <x-ui-pin wire:ignore name="verification_code" hideLabel length="6"/>
+        <x-ui- wire:ignore name="verification_code" hideLabel length="6"/>
         @error('verification_code')
             <p class="flex items-center text-red-500 mt-2">
                 <x-ui-icon name="alert-circle" solid size="5"/>

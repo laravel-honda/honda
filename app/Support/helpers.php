@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\User;
 use Spatie\Valuestore\Valuestore;
 
 if (!function_exists('settings')) {
@@ -36,5 +37,16 @@ if (!function_exists('every')) {
         }
 
         return true;
+    }
+}
+
+if (!function_exists('user')) {
+    function user(): User
+    {
+        $user = Auth::user();
+
+        abort_if($user === null, 403);
+
+        return $user;
     }
 }

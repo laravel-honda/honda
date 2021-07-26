@@ -5,12 +5,10 @@ namespace App\Models;
 use App\Models\Concerns\HasVerificationCode;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-/**
- * @mixin IdeHelperUser
- */
 class User extends Authenticatable implements MustVerifyEmail
 {
     use HasFactory;
@@ -21,4 +19,9 @@ class User extends Authenticatable implements MustVerifyEmail
         'password',
         'remember_token',
     ];
+
+    public function blocks(): HasMany
+    {
+        return $this->hasMany(Block::class);
+    }
 }

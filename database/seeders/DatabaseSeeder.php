@@ -8,5 +8,7 @@ class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
+        app(UserSeeder::class)->run();
+        app(BlockSeeder::class)->run();
     }
 }
